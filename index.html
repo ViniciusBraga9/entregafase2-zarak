@@ -1,31 +1,113 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="stylesheet" href="styles.css">
     <script type="text/babel" src="script.js" defer></script>
     <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
     <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-  </head>
-    <title> JobQuery </title>
+</head>
+<title> JobQuery </title>
 </head>
 
 <body>
-    
-    <nav class="navbar bg-body-tertiary">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">
-      <img src="microsoft.png" alt="Logo" width="40" height="34" class="d-inline-block align-text-top">
-      EmpregandoBad
-    </a>
-  </div>
-</nav>
+    <!-- NAV BAR -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="microsoft.png" alt="Logo" width="30" height="34" class="d-inline-block align-text-top">
+                EmpregandoBad
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Vagas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Currículos</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
+    <!-- RODAPÉ (FOOTER) -->
+    <footer class="bg-body-tertiary pt-5 pb-3 border-top">
+        <div class="container">
+            <div class="row">
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+                <!-- Coluna 1: Marca e descrição (3 de 12) -->
+                <div class="col-md-3 mb-4">
+                    <h5 class="fw-bold mb-3">Emprega-se aqui</h5>
+                    <p class="text-muted small">
+                        Conectamos talentos em início de carreira às melhores oportunidades do mercado,
+                        com análise inteligente de compatibilidade de perfil.
+                    </p>
+                </div>
+
+                <!-- Coluna 2: Empresa (2 de 12) -->
+                <div class="col-md-2 mb-4">
+                    <h5 class="fw-bold mb-3">Empresa</h5>
+                    <ul class="list-unstyled small">
+                        <li class="mb-2"><a href="#" class="text-decoration-none text-secondary">Sobre nós</a></li>
+                        <li class="mb-2"><a href="#" class="text-decoration-none text-secondary">Para empresas</a></li>
+                        <li class="mb-2"><a href="#" class="text-decoration-none text-secondary">Criar currículo</a></li>
+                    </ul>
+                </div>
+
+                <!-- Coluna 3: Navegue (2 de 12) -->
+                <div class="col-md-2 mb-4">
+                    <h5 class="fw-bold mb-3">Navegue</h5>
+                    <ul class="list-unstyled small">
+                        <li class="mb-2"><a href="index.html" class="text-decoration-none text-secondary">Início</a></li>
+                        <li class="mb-2"><a href="#" class="text-decoration-none text-secondary">Vagas</a></li>
+                        <li class="mb-2"><a href="#" class="text-decoration-none text-secondary">Currículos</a></li>
+                    </ul>
+                </div>
+
+                <!-- Coluna 4: Contato (2 de 12) -->
+                <div class="col-md-2 mb-4">
+                    <h5 class="fw-bold mb-3">Contato</h5>
+                    <p class="small text-muted mb-1">(83) 91234-5678</p>
+                    <p class="small text-muted">contato@emprega-se.com</p>
+                </div>
+
+                <!-- Coluna 5: Redes Sociais (3 de 12) -->
+                <div class="col-md-3 mb-4">
+                    <h5 class="fw-bold mb-3">Redes Sociais</h5>
+                    <ul class="list-unstyled small">
+                        <li class="mb-2"><a href="#" class="text-decoration-none text-secondary">Instagram - Emprega-se Aqui</a></li>
+                        <li class="mb-2"><a href="#" class="text-decoration-none text-secondary">X - Emprega-se Aqui</a></li>
+                        <li class="mb-2"><a href="#" class="text-decoration-none text-secondary">TikTok - Emprega-se Aqui</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <hr class="my-4">
+
+            <!-- Copyright -->
+            <div class="text-center">
+                <p class="text-muted small mb-0">&copy; 2026 Emprega-se Aqui. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>
