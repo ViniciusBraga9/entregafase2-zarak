@@ -1,0 +1,13 @@
+#div1 {
+    display: flex;
+    width: 100%;
+    text-align: center;
+    flex-direction: column;
+    background-color: aqua;
+    display: inline-block; margin-right: 10px;
+}
+
+#div2 {
+    display: flex;
+    display: inline-block;
+}
