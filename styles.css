@@ -75,6 +75,82 @@ h3,p{
     transition: 0.3s;
 }
 
+.quem-somos{
+    text-align: center;
+}
+
+.faq-section{
+    max-width: 800px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.faq-section h2{
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.comments-section{
+    max-width: 700px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.comments-section h2{
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.comments-carousel{
+    position: relative;
+    max-width: 1100px;
+    margin: 0 auto 20px auto;
+    padding: 0 80px;
+}
+
+.comment-slide{
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 20px;
+    flex-wrap: nowrap;
+}
+
+.comments-carousel .comment-card{
+    flex: 0 1 280px;
+    min-width: 0;
+    min-height: 200px;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.comments-carousel .comment-card:hover{
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+.comments-carousel .carousel-control-prev,
+.comments-carousel .carousel-control-next{
+    width: 50px;
+}
+
+.comments-carousel .carousel-control-prev{
+    left: -70px;
+}
+
+.comments-carousel .carousel-control-next{
+    right: -70px;
+}
+
+.comments-carousel .carousel-control-prev-icon,
+.comments-carousel .carousel-control-next-icon{
+    filter: invert(1) grayscale(100);
+}
+
+.comment-form{
+    margin-top: 30px;
+}
+
 .cards.container .card:hover{
     transform: translateY(-8px);
     box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
