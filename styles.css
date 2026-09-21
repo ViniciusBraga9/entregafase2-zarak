@@ -64,7 +64,8 @@ h3,p{
     justify-content: center;
     gap: 25px;
     flex-wrap: wrap;
-    margin: 30px;
+    margin-top: 30px;
+    margin-bottom: 30px;
 }
 
 .cards.container .card{
@@ -72,6 +73,11 @@ h3,p{
     min-height: 280px;
     border-radius: 10px;
     transition: 0.3s;
+}
+
+.cards.container .card:hover{
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
 }
 
 
