@@ -1,470 +1,589 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Emprega-se Aqui — Vagas compatíveis com o seu perfil</title>
-  <meta name="description" content="Encontre vagas compatíveis com seu perfil e descubra quais habilidades você já tem e quais ainda precisa desenvolver.">
-  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-  <link rel="preconnect" href="https://api.fontshare.com">
-  <link href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600,700&display=swap" rel="stylesheet">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-  <a class="skip" href="#vagas">Pular para as vagas</a>
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script type="text/babel" src="script.js" defer></script>
+    <script
+      src="https://unpkg.com/react@17/umd/react.development.js"
+      crossorigin
+    ></script>
+    <script
+      src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
+      crossorigin
+    ></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <title>Emprega-se Aqui</title>
+  </head>
 
-  <!-- CABEÇALHO -->
-  <header class="topbar" id="topo">
-    <div class="wrap topbar-inner">
-      <a class="brand" href="#topo" aria-label="Emprega-se Aqui — início">
-        <svg class="brand-mark" viewBox="0 0 100 100" aria-hidden="true">
-          <path d="M27 24 A38 38 0 1 0 77 28" fill="none" stroke="currentColor" stroke-width="14" stroke-linecap="round"/>
-          <rect x="16" y="17" width="48" height="14" rx="7" fill="currentColor"/>
-          <rect x="12" y="40" width="44" height="14" rx="7" fill="currentColor"/>
-          <rect x="26" y="63" width="20" height="14" rx="7" fill="currentColor"/>
-          <circle cx="70" cy="8" r="8" fill="var(--green)"/>
-        </svg>
-        <span class="brand-word">EMPREGA<span class="brand-dash">-</span>SE <span class="brand-aqui">AQUI</span></span>
-      </a>
-
-      <nav class="nav" id="nav" aria-label="Principal">
-        <a href="#vagas">Vagas</a>
-        <a href="#perfil">Meu perfil</a>
-        <a href="#dicas">Dicas</a>
-        <a href="#sobre">Quem somos</a>
-        <a href="#faq">Dúvidas</a>
-      </nav>
-
-      <div class="topbar-actions">
-        <button class="icon-btn" id="themeToggle" aria-label="Alternar tema claro/escuro">
-          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
-        </button>
-        <a class="btn btn-green btn-sm hide-sm" href="#perfil">Cadastrar currículo</a>
-        <button class="icon-btn menu-btn" id="menuBtn" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav">
-          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
-        </button>
-      </div>
-    </div>
-  </header>
-
-  <main>
-    <!-- HERO -->
-    <section class="hero">
-      <div class="wrap hero-grid">
-        <div class="hero-copy">
-          <p class="eyebrow on-dark"><span class="dot"></span> Vagas para quem está começando</p>
-          <h1>Encontre a vaga certa e veja <span class="hl">o quanto você combina</span> com ela.</h1>
-          <p class="lead">Compare suas habilidades com os requisitos de cada oportunidade e descubra onde você já está forte — e o que ainda vale desenvolver.</p>
-
-          <form class="search" id="heroSearch" role="search">
-            <label class="search-field">
-              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
-              <span class="sr">Cargo ou palavra-chave</span>
-              <input type="search" id="heroQ" placeholder="Cargo, tecnologia ou empresa" autocomplete="off">
-            </label>
-            <label class="search-field">
-              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 21s-7-6.2-7-12a7 7 0 0 1 14 0c0 5.8-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>
-              <span class="sr">Cidade</span>
-              <select id="heroCity"><option value="">Qualquer lugar</option></select>
-            </label>
-            <button class="btn btn-green" type="submit">Buscar vagas</button>
-          </form>
-
-          <div class="quick-tags" aria-label="Buscas populares">
-            <span>Populares:</span>
-            <button type="button" data-q="Front-end">Front-end</button>
-            <button type="button" data-q="Dados">Dados</button>
-            <button type="button" data-q="Estágio">Estágio</button>
-            <button type="button" data-q="Remoto">Remoto</button>
-          </div>
-        </div>
-
-        <div class="hero-visual" aria-hidden="true">
-          <div class="mock-card">
-            <div class="mock-head">
-              <div class="logo-chip" style="--c:#1f6c91">NV</div>
-              <div>
-                <strong>Desenvolvedor(a) Front-end Jr.</strong>
-                <span>Nuvem Verde · Campina Grande · Híbrido</span>
-              </div>
-            </div>
-            <div class="mock-body">
-              <div class="ring" style="--p:80"><span>80%</span></div>
-              <ul class="mock-reqs">
-                <li class="ok">JavaScript</li>
-                <li class="ok">HTML e CSS</li>
-                <li class="ok">Git</li>
-                <li class="ok">React</li>
-                <li class="miss">TypeScript</li>
-              </ul>
-            </div>
-            <p class="mock-tip">Você já tem 4 de 5 requisitos. Estude <b>TypeScript</b> para chegar a 100%.</p>
-          </div>
-          <div class="float-badge">
-            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-10"/></svg>
-            Candidatura enviada
-          </div>
-        </div>
-      </div>
-
-      <div class="wrap stats">
-        <div><strong data-count="2400">2400</strong><span>+</span><p>Vagas ativas</p></div>
-        <div><strong data-count="94">94</strong><span>%</span><p>Satisfação dos usuários</p></div>
-        <div><strong data-count="7000">7000</strong><span>+</span><p>Pessoas que entraram no mercado de trabalho</p></div>
-      </div>
-    </section>
-
-    <!-- VAGAS -->
-    <section class="section" id="vagas">
-      <div class="wrap">
-        <div class="section-head">
-          <div>
-            <p class="eyebrow">Oportunidades</p>
-            <h2>Vagas abertas</h2>
-            <p class="demo-note">Vagas de demonstração para explorar a plataforma.</p>
-          </div>
-          <p class="muted" id="profileHint">Monte seu <a href="#perfil">perfil</a> para ver a compatibilidade com cada vaga.</p>
-        </div>
-
-        <div class="jobs-layout">
-          <aside class="filters" id="filters" aria-label="Filtros">
-            <div class="filters-top">
-              <h3>Filtros</h3>
-              <button class="link-btn" id="clearFilters" type="button">Limpar</button>
-            </div>
-
-            <label class="field">
-              <span>Palavra-chave</span>
-              <input type="search" id="fQ" placeholder="Ex.: React, suporte, dados">
-            </label>
-
-            <fieldset class="field">
-              <legend>Área</legend>
-              <div class="chips" id="fArea"></div>
-            </fieldset>
-
-            <fieldset class="field">
-              <legend>Modalidade</legend>
-              <div class="checks" id="fMode"></div>
-            </fieldset>
-
-            <fieldset class="field">
-              <legend>Nível</legend>
-              <div class="checks" id="fLevel"></div>
-            </fieldset>
-
-            <label class="field">
-              <span>Cidade</span>
-              <select id="fCity"><option value="">Todas as cidades</option></select>
-            </label>
-
-            <label class="switch-row">
-              <input type="checkbox" id="fSaved">
-              <span>Só vagas salvas</span>
-            </label>
-          </aside>
-
-          <div class="results">
-            <div class="results-bar">
-              <p id="resultCount" aria-live="polite">—</p>
-              <div class="results-actions">
-                <button class="btn btn-ghost btn-sm filter-toggle" id="filterToggle" type="button" aria-controls="filters" aria-expanded="false">Filtros</button>
-                <label class="sort">
-                  <span class="sr">Ordenar por</span>
-                  <select id="sort">
-                    <option value="match">Mais compatíveis</option>
-                    <option value="recent">Mais recentes</option>
-                    <option value="salary">Maior salário</option>
-                  </select>
-                </label>
-              </div>
-            </div>
-            <ul class="job-list" id="jobList"></ul>
-            <div class="more-wrap" id="moreWrap" hidden><button class="btn btn-ghost" type="button" id="moreBtn">Ver mais vagas</button></div>
-            <div class="empty" id="emptyState" hidden>
-              <svg viewBox="0 0 24 24" width="40" height="40" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5M8 11h6"/></svg>
-              <h3>Nenhuma vaga com esses filtros</h3>
-              <p>Tente remover algum filtro ou buscar por outro termo.</p>
-              <button class="btn btn-ghost btn-sm" type="button" id="emptyClear">Limpar filtros</button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- COMO FUNCIONA -->
-    <section class="section alt" id="como-funciona">
-      <div class="wrap">
-        <div class="section-head center">
-          <p class="eyebrow">Passo a passo</p>
-          <h2>Como funciona</h2>
-          <p class="muted">Em três etapas simples, conectamos você às melhores oportunidades do mercado.</p>
-        </div>
-        <ol class="steps">
-          <li>
-            <span class="step-n">1</span>
-            <h3>Cadastre seu perfil</h3>
-            <p>Envie seu currículo e informe suas habilidades, formação e experiência para que possamos ajudar você a entrar no mercado de trabalho.</p>
-            <a href="#perfil" class="step-link">Montar meu perfil →</a>
-          </li>
-          <li>
-            <span class="step-n">2</span>
-            <h3>Escolha sua área</h3>
-            <p>Selecione a área que deseja explorar: Front-end, Back-end, Dados, IA, Suporte, Design e muito mais.</p>
-            <a href="#vagas" class="step-link">Ver áreas →</a>
-          </li>
-          <li>
-            <span class="step-n">3</span>
-            <h3>Encontre sua oportunidade</h3>
-            <p>Veja vagas compatíveis com seu perfil e descubra quais requisitos você já possui e quais ainda precisa desenvolver.</p>
-            <a href="#vagas" class="step-link">Buscar vagas →</a>
-          </li>
-        </ol>
-      </div>
-    </section>
-
-    <!-- PERFIL / CURRÍCULO -->
-    <section class="section" id="perfil">
-      <div class="wrap profile-grid">
-        <div class="profile-intro">
-          <p class="eyebrow">Currículo</p>
-          <h2>Monte seu perfil em 1 minuto</h2>
-          <p class="muted">Marque as habilidades que você já tem. Na hora, cada vaga mostra sua porcentagem de compatibilidade e o que falta para chegar lá.</p>
-          <div class="profile-summary" id="profileSummary">
-            <div class="ring big" id="summaryRing" style="--p:0"><span>0</span></div>
-            <div>
-              <strong id="summaryTitle">Nenhuma habilidade marcada</strong>
-              <p id="summaryText">Comece escolhendo sua área e suas habilidades.</p>
-            </div>
-          </div>
-          <img class="profile-art" src="assets/03.webp" alt="Arte: Atualize seu currículo com confiança" loading="lazy" width="1672" height="941">
-        </div>
-
-        <form class="profile-form" id="profileForm" novalidate>
-          <p class="muted demo-note">Os dados ficam apenas durante esta visita. O arquivo selecionado não é enviado.</p>
-          <div class="row2">
-            <label class="field">
-              <span>Nome</span>
-              <input type="text" id="pName" placeholder="Seu nome completo" autocomplete="name">
-            </label>
-            <label class="field">
-              <span>Área de interesse</span>
-              <select id="pArea"><option value="">Escolha uma área</option></select>
-            </label>
-          </div>
-
-          <label class="field">
-            <span>Formação</span>
-            <input type="text" id="pEdu" placeholder="Ex.: Sistemas de Informação — 4º período">
-          </label>
-
-          <fieldset class="field">
-            <legend>Suas habilidades <small id="skillCount">(0 marcadas)</small></legend>
-            <div class="chips skills" id="pSkills"></div>
-          </fieldset>
-
-          <label class="upload" id="uploadBox">
-            <input type="file" id="pFile" accept=".pdf,.doc,.docx">
-            <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 16V4m0 0-4 4m4-4 4 4M4 16v3a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-3"/></svg>
-            <span id="uploadText"><b>Anexe seu currículo</b> (PDF ou Word)</span>
-          </label>
-
-          <div class="form-actions">
-            <button type="submit" class="btn btn-green">Salvar perfil</button>
-            <button type="button" class="btn btn-ghost" id="resetProfile">Limpar</button>
-          </div>
-        </form>
-      </div>
-    </section>
-
-    <!-- DICAS (ARTES) -->
-    <section class="section dark" id="dicas">
-      <div class="wrap">
-        <div class="section-head">
-          <div>
-            <p class="eyebrow on-dark">Dicas de carreira</p>
-            <h2>5 atitudes que podem te destacar</h2>
-          </div>
-          <div class="carousel-nav">
-            <button class="round-btn" id="prevSlide" aria-label="Arte anterior">
-              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="m15 6-6 6 6 6"/></svg>
-            </button>
-            <button class="round-btn" id="nextSlide" aria-label="Próxima arte">
-              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="m9 6 6 6-6 6"/></svg>
-            </button>
-          </div>
-        </div>
-
-        <div class="carousel" id="carousel" tabindex="0" aria-roledescription="carrossel" aria-label="Dicas de carreira">
-          <div class="track" id="track">
-            <figure class="slide"><img src="assets/01.webp" alt="Quer conseguir um emprego mais rápido? Veja 5 atitudes que podem te destacar." width="1672" height="941"></figure>
-            <figure class="slide"><img src="assets/02.webp" alt="Não é só experiência, é talento." loading="lazy" width="1672" height="941"></figure>
-            <figure class="slide"><img src="assets/03.webp" alt="1. Atualize seu currículo com confiança." loading="lazy" width="1672" height="941"></figure>
-            <figure class="slide"><img src="assets/04.webp" alt="2. Adapte-se à vaga: leia os requisitos e ajuste seu currículo para aquela oportunidade." loading="lazy" width="1672" height="941"></figure>
-            <figure class="slide"><img src="assets/05.webp" alt="3. Cuide do seu perfil profissional." loading="lazy" width="1672" height="941"></figure>
-            <figure class="slide"><img src="assets/06.webp" alt="4. Prepare-se para grandes entrevistas." loading="lazy" width="1672" height="941"></figure>
-            <figure class="slide"><img src="assets/07.webp" alt="Seu próximo emprego começa hoje." loading="lazy" width="1672" height="941"></figure>
-          </div>
-        </div>
-        <div class="dots" id="dots" role="tablist" aria-label="Escolher arte"></div>
-      </div>
-    </section>
-
-    <!-- QUEM SOMOS -->
-    <section class="section" id="sobre">
-      <div class="wrap about-grid">
-        <div>
-          <p class="eyebrow">Quem somos</p>
-          <h2>Sete amigos, uma faculdade e um problema em comum.</h2>
-        </div>
-        <div class="about-text">
-          <p>O Emprega-se Aqui nasceu em 2026, a partir da iniciativa de sete amigos ainda na faculdade. Percebemos que um dos grandes obstáculos para entrar no mercado de trabalho não era a falta de talento, mas a falta de direção. Os processos seletivos eram pouco claros, os candidatos não sabiam onde estavam errando e as empresas recebiam centenas de currículos sem contexto.</p>
-          <p>Então surgiu o Emprega-se Aqui: uma plataforma que analisa o perfil do candidato, mapeia suas habilidades e compara com os requisitos de cada vaga, mostrando onde você está forte e quais habilidades ainda pode desenvolver.</p>
-          <div class="mv">
-            <div>
-              <h3>Nossa missão</h3>
-              <p>Conectar pessoas a oportunidades compatíveis com seus perfis, tornando a busca por emprego mais simples, acessível e inteligente.</p>
-            </div>
-            <div>
-              <h3>Nossa visão</h3>
-              <p>Ajudar estudantes e profissionais em início de carreira a encontrar oportunidades e identificar quais habilidades precisam desenvolver.</p>
-            </div>
-          </div>
-          <p class="tagline">Emprega-se Aqui: conectando talentos a oportunidades.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- DEPOIMENTOS -->
-    <section class="section alt" id="comentarios">
-      <div class="wrap">
-        <div class="section-head">
-          <div>
-            <p class="eyebrow">Comentários</p>
-            <h2>Quem usou, conta</h2>
-          </div>
-        </div>
-        <div class="comments" id="comments"></div>
-
-        <form class="comment-form" id="commentForm">
-          <h3>Deixe seu comentário</h3>
-          <p class="muted demo-note">Seu comentário fica visível durante esta visita.</p>
-          <div class="row2">
-            <label class="field"><span>Nome</span><input type="text" id="cName" placeholder="Seu nome" required maxlength="40"></label>
-            <label class="field"><span>Comentário</span><input type="text" id="cText" placeholder="Como foi sua experiência?" required maxlength="220"></label>
-          </div>
-          <button type="submit" class="btn btn-navy">Enviar comentário</button>
-        </form>
-      </div>
-    </section>
-
-    <!-- FAQ -->
-    <section class="section" id="faq">
-      <div class="wrap faq-grid">
-        <div>
-          <p class="eyebrow">Dúvidas</p>
-          <h2>Perguntas frequentes</h2>
-          <p class="muted">Não encontrou o que procurava? Fale com a gente em <a href="mailto:contato@emprega-se.com">contato@emprega-se.com</a>.</p>
-        </div>
-        <div class="faq">
-          <details open>
-            <summary>O Emprega-se Aqui é gratuito?</summary>
-            <p>Sim, o cadastro e a busca por vagas são totalmente gratuitos para candidatos.</p>
-          </details>
-          <details>
-            <summary>Como funciona a comparação de habilidades?</summary>
-            <p>Analisamos o seu perfil e comparamos com os requisitos de cada vaga, mostrando onde você já está forte e o que ainda pode desenvolver.</p>
-          </details>
-          <details>
-            <summary>Preciso ter experiência profissional para me cadastrar?</summary>
-            <p>Não. A plataforma é voltada também para estudantes e profissionais em início de carreira.</p>
-          </details>
-          <details>
-            <summary>Como as empresas encontram meu perfil?</summary>
-            <p>As empresas publicam vagas na plataforma e você pode se candidatar diretamente às oportunidades compatíveis com seu perfil.</p>
-          </details>
-        </div>
-      </div>
-    </section>
-
-    <!-- CTA -->
-    <section class="cta">
-      <div class="wrap cta-inner">
-        <h2>Seu próximo emprego começa hoje.</h2>
-        <a href="#perfil" class="btn btn-green">Criar meu perfil grátis</a>
-      </div>
-    </section>
-  </main>
-
-  <!-- RODAPÉ -->
-  <footer class="footer">
-    <div class="wrap footer-grid">
-      <div class="footer-brand">
-        <a class="brand" href="#topo" aria-label="Emprega-se Aqui — início">
-          <svg class="brand-mark" viewBox="0 0 100 100" aria-hidden="true">
-            <path d="M27 24 A38 38 0 1 0 77 28" fill="none" stroke="currentColor" stroke-width="14" stroke-linecap="round"/>
-            <rect x="16" y="17" width="48" height="14" rx="7" fill="currentColor"/>
-            <rect x="12" y="40" width="44" height="14" rx="7" fill="currentColor"/>
-            <rect x="26" y="63" width="20" height="14" rx="7" fill="currentColor"/>
-            <circle cx="70" cy="8" r="8" fill="var(--green)"/>
-          </svg>
-          <span class="brand-word">EMPREGA<span class="brand-dash">-</span>SE <span class="brand-aqui">AQUI</span></span>
+  <body>
+    <!-- NAV BAR -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">
+          <img
+            src="logo_emprega_se_aqui_30x35.png"
+            alt="Logo"
+            width="30"
+            height="34"
+            class="d-inline-block align-text-top"
+          />
+          Emprega-se Aqui
         </a>
-        <p>Conectamos talentos em início de carreira às melhores oportunidades do mercado, com análise inteligente de compatibilidade de perfil.</p>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="index.html"
+                >Home</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Vagas</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="curriculo.html">Currículos</a>
+            </li>
+          </ul>
+        </div>
       </div>
-      <div>
-        <h4>Navegue</h4>
-        <ul>
-          <li><a href="#vagas">Vagas</a></li>
-          <li><a href="#perfil">Criar currículo</a></li>
-          <li><a href="#dicas">Dicas</a></li>
-          <li><a href="#sobre">Sobre nós</a></li>
-        </ul>
+    </nav>
+
+    <!-- Banners -->
+
+    <div id="carouselBanner" class="carousel slide">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img
+            src="01_conquiste_seu_emprego_mais_rapido.png"
+            class="d-block w-100"
+            alt="..."
+          />
+        </div>
+        <div class="carousel-item">
+          <img
+            src="02_nao_e_so_experiencia_e_talento.png"
+            class="d-block w-100"
+            alt="..."
+          />
+        </div>
+        <div class="carousel-item">
+          <img
+            src="03_atualize_seu_curriculo_com_confianca.png"
+            class="d-block w-100"
+            alt="..."
+          />
+        </div>
+        <div class="carousel-item">
+          <img
+            src="04_adapte_se_a_vaga_analise_e_destaque_seu_curriculo.png"
+            class="d-block w-100"
+            alt="..."
+          />
+        </div>
+        <div class="carousel-item">
+          <img
+            src="05_cuide_do_seu_perfil_profissional.png"
+            class="d-block w-100"
+            alt="..."
+          />
+        </div>
+        <div class="carousel-item">
+          <img
+            src="06_prepare_se_para_grandes_entrevistas.png"
+            class="d-block w-100"
+            alt="..."
+          />
+        </div>
+        <div class="carousel-item">
+          <img
+            src="07_seu_proximo_emprego_comeca_hoje.png"
+            class="d-block w-100"
+            alt="..."
+          />
+        </div>
       </div>
-      <div>
-        <h4>Contato</h4>
-        <ul>
-          <li><a href="tel:+5583912345678">(83) 91234-5678</a></li>
-          <li><a href="mailto:contato@emprega-se.com">contato@emprega-se.com</a></li>
-          <li>Campina Grande — PB</li>
-        </ul>
-      </div>
-      <div>
-        <h4>Redes sociais</h4>
-        <ul>
-          <li><a href="#">Instagram</a></li>
-          <li><a href="#">X</a></li>
-          <li><a href="#">TikTok</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Desenvolvedores</h4>
-        <ul class="devs">
-          <li>Vinicius Aglay</li>
-          <li>Pedro Nunes</li>
-          <li>Thiago Carvalho</li>
-          <li>Murilo Lira</li>
-          <li>Gabriel Farias</li>
-          <li>Raimundo Neto</li>
-          <li>João Lucas</li>
-        </ul>
+      <button
+        class="carousel-control-prev"
+        type="button"
+        data-bs-target="#carouselBanner"
+        data-bs-slide="prev"
+      >
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button
+        class="carousel-control-next"
+        type="button"
+        data-bs-target="#carouselBanner"
+        data-bs-slide="next"
+      >
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+
+    <!--Grid cards-->
+
+    <div class="container text-center my-5">
+      <div class="row">
+        <div class="col-md-4 mb-3">
+          <h3 class="fw-bold">2400+</h3>
+          <p class="text-muted mb-0">Vagas Ativas</p>
+        </div>
+        <div class="col-md-4 mb-3">
+          <h3 class="fw-bold">94%</h3>
+          <p class="text-muted mb-0">Satisfação</p>
+        </div>
+        <div class="col-md-4 mb-3">
+          <h3 class="fw-bold">7000+</h3>
+          <p class="text-muted mb-0">
+            Pessoas que entraram no mercado de trabalho
+          </p>
+        </div>
       </div>
     </div>
-    <div class="wrap footer-bottom">
-      <p>&copy; 2026 Emprega-se Aqui. Todos os direitos reservados.</p>
+
+    <hr />
+
+    <!--Como funciona-->
+    <h6>Passo a passo</h6>
+    <h3>Como Funciona</h3>
+    <p>
+      Em tres etapas simples, Conectamos voce as melhores oportunidades do
+      mercado.
+    </p>
+
+    <div class="cards container">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Passo um</h5>
+          <h6 class="card-subtitle mb-2 text-body-secondary">
+            Cadastre seu perfil
+          </h6>
+          <p class="card-text">
+            Escolha seu curriculo para informar suas habilidades,formação e
+            experiencia profissional para qie possamos te ajudar a entra no
+            mercado de trabalho. ou caso tenho ja criando o curriclo vai ate a
+            aba de Vagas
+          </p>
+          <a href="#" class="card-link"> Inicie Aqui</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Passo dois</h5>
+          <h6 class="card-subtitle mb-2 text-body-secondary">
+            Escolha sua area
+          </h6>
+          <p class="card-text">
+            Seleciona a area profssional que deseja explorar, ex: Front-end,
+            Back-end, Dados, IA e Muito mais.
+          </p>
+          <a href="#" class="card-link"> Inicie Aqui</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Passo três</h5>
+          <h6 class="card-subtitle mb-2 text-body-secondary">
+            Encontre sua oportunidade
+          </h6>
+          <p class="card-text">
+            Veja vagas compativeis com seu perfil e descubra quais requisitos
+            voce ja possui e quais ainda precisa desenvolver.
+          </p>
+          <a href="#" class="card-link"> Inicie Aqui</a>
+        </div>
+      </div>
     </div>
-  </footer>
 
-  <!-- MODAL DA VAGA -->
-  <dialog class="modal" id="jobModal" aria-labelledby="mTitle">
-    <div class="modal-inner" id="modalContent"></div>
-  </dialog>
+    <hr />
 
-  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <!--Quem Somos -->
+    <div class="container quem-somos">
+      <h2>Quem Somos</h2>
+      <p>
+        O Emprega-se Aqui nasceu em 2026, a partir da iniciativa de sete amigos
+        ainda na faculdade. Percebemos que um dos grandes obstáculos para entrar
+        no mercado de trabalho não era a falta de talento, mas a falta de
+        direção. Os processos seletivos eram pouco claros, os candidatos não
+        sabiam onde estavam errando e as empresas recebiam centenas de
+        currículos sem contexto.
+      </p>
 
-  <script src="script.js"></script>
-</body>
+      <p>
+        Então surgiu o Emprega-se Aqui: uma plataforma que analisa o perfil do
+        candidato, mapeia suas habilidades e compara com os requisitos de cada
+        vaga, mostrando onde você está forte e quais habilidades ainda pode
+        desenvolver.
+      </p>
+
+      <p>
+        Durante nossa trajetória acadêmica, percebemos que muitos estudantes e
+        profissionais em início de carreira encontram dificuldades para
+        identificar vagas compatíveis com seus conhecimentos e entender o que o
+        mercado espera deles. Foi a partir dessa necessidade que decidimos criar
+        uma plataforma para aproximar pessoas em busca de oportunidades e
+        empresas em busca de novos talentos.
+      </p>
+
+      <h2>Nossa Missão</h2>
+      <p>
+        Nossa missão é conectar pessoas a oportunidades compatíveis com seus
+        perfis, tornando a busca por emprego mais simples, acessível e
+        inteligente.
+      </p>
+
+      <h2>Nossa Visão</h2>
+      <p>
+        Queremos ajudar estudantes e profissionais em início de carreira a
+        encontrarem oportunidades e identificarem quais habilidades precisam
+        desenvolver para alcançar seus objetivos profissionais.
+      </p>
+
+      <b>Emprega-se Aqui: conectando talentos a oportunidades.</b>
+    </div>
+
+    <hr />
+
+    <!--FAQ-->
+    <div class="container faq-section">
+      <h2>Perguntas Frequentes</h2>
+      <div class="accordion" id="faqAccordion">
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button
+              class="accordion-button"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#faq1"
+            >
+              O Emprega-se Aqui é gratuito?
+            </button>
+          </h2>
+          <div
+            id="faq1"
+            class="accordion-collapse collapse show"
+            data-bs-parent="#faqAccordion"
+          >
+            <div class="accordion-body">
+              Sim, o cadastro e a busca por vagas são totalmente gratuitos para
+              candidatos.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#faq2"
+            >
+              Como funciona a comparação de habilidades?
+            </button>
+          </h2>
+          <div
+            id="faq2"
+            class="accordion-collapse collapse"
+            data-bs-parent="#faqAccordion"
+          >
+            <div class="accordion-body">
+              Analisamos o seu perfil e comparamos com os requisitos de cada
+              vaga, mostrando onde você já está forte e o que ainda pode
+              desenvolver.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#faq3"
+            >
+              Preciso ter experiência profissional para me cadastrar?
+            </button>
+          </h2>
+          <div
+            id="faq3"
+            class="accordion-collapse collapse"
+            data-bs-parent="#faqAccordion"
+          >
+            <div class="accordion-body">
+              Não. A plataforma é voltada também para estudantes e profissionais
+              em início de carreira.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#faq4"
+            >
+              Como as empresas encontram meu perfil?
+            </button>
+          </h2>
+          <div
+            id="faq4"
+            class="accordion-collapse collapse"
+            data-bs-parent="#faqAccordion"
+          >
+            <div class="accordion-body">
+              As empresas publicam vagas na plataforma e você pode se candidatar
+              diretamente às oportunidades compatíveis com seu perfil.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <hr />
+
+    <!--Comentários-->
+    <div class="container comments-section">
+      <h2>Comentários</h2>
+
+      <div
+        id="commentsCarousel"
+        class="carousel slide comments-carousel"
+        data-bs-ride="carousel"
+      >
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="comment-slide">
+              <div class="card comment-card">
+                <div class="card-body">
+                  <h5 class="card-title">Ana Souza</h5>
+                  <p class="card-text">
+                    Consegui minha primeira vaga na área de dados usando a
+                    plataforma. Recomendo!
+                  </p>
+                </div>
+              </div>
+              <div class="card comment-card">
+                <div class="card-body">
+                  <h5 class="card-title">Lucas Mendes</h5>
+                  <p class="card-text">
+                    A comparação de habilidades me ajudou a entender o que eu
+                    precisava estudar.
+                  </p>
+                </div>
+              </div>
+              <div class="card comment-card">
+                <div class="card-body">
+                  <h5 class="card-title">Beatriz Lima</h5>
+                  <p class="card-text">
+                    Interface simples e fácil de usar. Só senti falta de mais
+                    filtros de busca.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="comment-slide">
+              <div class="card comment-card">
+                <div class="card-body">
+                  <h5 class="card-title">Rafael Costa</h5>
+                  <p class="card-text">
+                    Muito bom para quem está começando na área de tecnologia.
+                  </p>
+                </div>
+              </div>
+              <div class="card comment-card">
+                <div class="card-body">
+                  <h5 class="card-title">Juliana Alves</h5>
+                  <p class="card-text">
+                    Gostei bastante do passo a passo, ficou tudo bem explicado.
+                  </p>
+                </div>
+              </div>
+              <div class="card comment-card">
+                <div class="card-body">
+                  <h5 class="card-title">Marcos Vieira</h5>
+                  <p class="card-text">
+                    Encontrei uma vaga compatível com meu perfil em poucos dias.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#commentsCarousel"
+          data-bs-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#commentsCarousel"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        </button>
+      </div>
+
+      <form class="comment-form">
+        <div class="mb-3">
+          <label for="commentName" class="form-label">Nome</label>
+          <input
+            type="text"
+            class="form-control"
+            id="commentName"
+            placeholder="Seu nome"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="commentText" class="form-label">Comentário</label>
+          <textarea
+            class="form-control"
+            id="commentText"
+            rows="3"
+            placeholder="Escreva seu comentário"
+          ></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Enviar</button>
+      </form>
+    </div>
+
+    <hr />
+    <!-- FOOTER -->
+    <footer class="bg-body-tertiary pt-5 pb-3 border-top">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3 mb-4">
+            <h5 class="fw-bold mb-3">Emprega-se aqui</h5>
+            <p class="text-muted small">
+              Conectamos talentos em início de carreira às melhores
+              oportunidades do mercado, com análise inteligente de
+              compatibilidade de perfil.
+            </p>
+          </div>
+
+          <div class="col-md-2 mb-4">
+            <h5 class="fw-bold mb-3">Empresa</h5>
+            <ul class="list-unstyled small">
+              <li class="mb-2">
+                <a href="#" class="text-decoration-none text-secondary"
+                  >Sobre nós</a
+                >
+              </li>
+              <li class="mb-2">
+                <a href="#" class="text-decoration-none text-secondary"
+                  >Para empresas</a
+                >
+              </li>
+              <li class="mb-2">
+                <a href="#" class="text-decoration-none text-secondary"
+                  >Criar currículo</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div class="col-md-2 mb-4">
+            <h5 class="fw-bold mb-3">Navegue</h5>
+            <ul class="list-unstyled small">
+              <li class="mb-2">
+                <a href="index.html" class="text-decoration-none text-secondary"
+                  >Início</a
+                >
+              </li>
+              <li class="mb-2">
+                <a href="#" class="text-decoration-none text-secondary"
+                  >Vagas</a
+                >
+              </li>
+              <li class="mb-2">
+                <a href="#" class="text-decoration-none text-secondary"
+                  >Currículos</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div class="col-md-2 mb-4">
+            <h5 class="fw-bold mb-3">Contato</h5>
+            <p class="small text-muted mb-1">(83) 91234-5678</p>
+            <p class="small text-muted">contato@emprega-se.com</p>
+          </div>
+
+          <div class="col-md-3 mb-4">
+            <h5 class="fw-bold mb-3">Redes Sociais</h5>
+            <ul class="list-unstyled small">
+              <li class="mb-2">
+                <a href="#" class="text-decoration-none text-secondary"
+                  >Instagram - Emprega-se Aqui</a
+                >
+              </li>
+              <li class="mb-2">
+                <a href="#" class="text-decoration-none text-secondary"
+                  >X - Emprega-se Aqui</a
+                >
+              </li>
+              <li class="mb-2">
+                <a href="#" class="text-decoration-none text-secondary"
+                  >TikTok - Emprega-se Aqui</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <hr class="my-4" />
+
+        <div class="text-center">
+          <p class="text-muted small mb-0">
+            &copy; 2026 Emprega-se Aqui. Todos os direitos reservados.
+          </p>
+        </div>
+
+        <h6>Desenvolvedores</h6>
+        <p>
+          Vinicius Aglay <br />
+          Pedro Nunes <br />
+          Thiago Carvalho <br />
+          Murilo Lira <br />
+          Gabriel Farias <br />
+          Raimundo Neto <br />
+          João Lucas
+        </p>
+      </div>
+    </footer>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>
