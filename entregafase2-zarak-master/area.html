@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Area</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+        crossorigin="anonymous">
+
+    <link rel="stylesheet" href="styles.css">
+
+    <script type="text/babel" src="script.js" defer></script>
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+
+<body>
+
+    <!-- NAV BAR -->
+    <nav class="navbar navbar-expand-lg" data-bs-theme="dark">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img
+            src="logo_emprega_se_aqui_30x35.png"
+            alt="Logo"
+            width="30"
+            height="34"
+            class="d-inline-block align-text-top"
+          />
+          Emprega-se Aqui
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Abrir menu"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="index.html"
+                >Home</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Vagas</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="curriculo.html">Currículos</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Sobre as Vagas -->
+    <h1>Está em dúvida sobre as vagas?</h1>
+
+    <p>Esta página explica sobre as vagas.</p>
+
+    <p>Explore suas possibilidades.</p>
+
+    <h1>Áreas de Atuação</h1>
+
+    <p>
+        Conheça as principais áreas do mercado de programação, entenda o que cada uma
+        faz e descubra qual combina mais com o seu perfil.
+    </p>
+
+    <!-- Front-end -->
+    <div class="card text-center mb-3" style="width: 18rem;">
+        <div class="card-body">
+
+            <h5 class="card-title">Front-end</h5>
+
+            <p class="card-text">
+                O desenvolvedor front-end é responsável por tudo que o usuário vê e interage no site ou aplicativo.
+                Ele transforma o design em páginas reais usando HTML, CSS e JavaScript.
+            </p>
+
+            <div class="tecnologias">
+                <p>Por exemplo: HTML | CSS | JavaScript | React | Bootstrap</p>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Back-end -->
+    <div class="card text-center mb-3" style="width: 18rem;">
+        <div class="card-body">
+
+            <h5 class="card-title">Back-end</h5>
+
+            <p class="card-text">
+                O back-end é o motor do site. Ele garante as regras de negócio, processa os dados,
+                cuida da segurança e faz a comunicação entre o sistema e o banco de dados.
+            </p>
+
+            <div class="tecnologias">
+                <p>Por exemplo: Java | Spring Boot | Node.js | Python | APIs REST</p>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Full-Stack -->
+    <div class="card text-center mb-3" style="width: 18rem;">
+        <div class="card-body">
+
+            <h5 class="card-title">Full-Stack</h5>
+
+            <p class="card-text">
+                O desenvolvedor full stack domina tanto o front-end quanto o back-end.
+                Ele consegue construir um produto completo do zero, do visual ao servidor.
+            </p>
+
+            <div class="tecnologias">
+                <p>Por exemplo: React | Node.js | SQL | Git | Docker</p>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Banco de Dados -->
+    <div class="card text-center mb-3" style="width: 18rem;">
+        <div class="card-body">
+
+            <h5 class="card-title">Banco de Dados</h5>
+
+            <p class="card-text">
+                Responsável por organizar, armazenar e proteger as informações do sistema.
+                Sem banco de dados, nenhum site guarda dados de usuários, pedidos ou produtos.
+            </p>
+
+            <div class="tecnologias">
+                <p>Por exemplo: PostgreSQL | Oracle</p>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Análise de Dados -->
+    <div class="card text-center mb-3" style="width: 18rem;">
+        <div class="card-body">
+
+            <h5 class="card-title">Análise de Dados</h5>
+
+            <p class="card-text">
+                O analista de dados coleta, organiza e interpreta informações para ajudar empresas
+                a tomarem decisões mais inteligentes com base em números reais.
+            </p>
+
+            <div class="tecnologias">
+                <p>Por exemplo: Python | SQL | Power BI | Excel | Pandas</p>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Inteligência Artificial -->
+    <div class="card text-center mb-3" style="width: 18rem;">
+        <div class="card-body">
+
+            <h5 class="card-title">Inteligência Artificial</h5>
+
+            <p class="card-text">
+                Área que desenvolve sistemas capazes de aprender e tomar decisões sozinhos.
+                É usada em recomendações, reconhecimento de imagem, chatbots e muito mais.
+            </p>
+
+            <div class="tecnologias">
+                <p>Por exemplo: Python | TensorFlow | Machine Learning | LLMs</p>
+            </div>
+
+        </div>
+    </div>
+
+    <h1>Já sabe qual área é a sua?</h1>
+
+    <p>
+        Crie ou envie seu currículo e encontre vagas compatíveis com suas habilidades.
+    </p>
+
+    <button>Começar Agora</button>
+    
+<!-- Formulário de Currículo -->
+    <body>
+
+  <form class="layout">
+
+    <aside class="sidebar">
+      <span class="subtitle">CURRÍCULO</span>
+      <h1>Monte seu perfil em 1 minuto</h1>
+      <p class="description">
+        Marque as habilidades que você já tem. Na hora, cada vaga mostra sua porcentagem de compatibilidade e o que falta para chegar lá.
+      </p>
+
+      <div class="counter-card">
+        <div class="counter-badge"></div>
+        <div class="counter-info">
+          <h4>Habilidades marcadas</h4>
+          <p>Selecione as opções ao lado.</p>
+        </div>
+      </div>
+    </aside>
+
+    <main class="form-container">
+      <div class="form-row">
+        <div class="form-group">
+          <label>NOME</label>
+          <input type="text" placeholder="Seu nome completo" required>
+        </div>
+        <div class="form-group">
+          <label>ÁREA DE INTERESSE</label>
+          <select required>
+            <option value="">Escolha uma área</option>
+            <option value="frontend">Front-end</option>
+            <option value="backend">Back-end</option>
+            <option value="dados">Dados e IA</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>FORMAÇÃO</label>
+        <input type="text" placeholder="Ex.: Sistemas de Informação — 4º período">
+      </div>
+
+      <div class="skills-section">
+        <label class="section-label">SUAS HABILIDADES</label>
+
+        <!-- Front-end -->
+        <div class="skill-category">
+          <span>Front-end</span>
+          <div class="tags-group">
+            <input type="checkbox" id="tag-html" class="skill-check">
+            <label for="tag-html" class="skill-btn">HTML e CSS</label>
+
+            <input type="checkbox" id="tag-js" class="skill-check">
+            <label for="tag-js" class="skill-btn">JavaScript</label>
+
+            <input type="checkbox" id="tag-ts" class="skill-check">
+            <label for="tag-ts" class="skill-btn">TypeScript</label>
+
+            <input type="checkbox" id="tag-react" class="skill-check">
+            <label for="tag-react" class="skill-btn">React</label>
+
+            <input type="checkbox" id="tag-vue" class="skill-check">
+            <label for="tag-vue" class="skill-btn">Vue</label>
+
+            <input type="checkbox" id="tag-figma" class="skill-check">
+            <label for="tag-figma" class="skill-btn">Figma</label>
+          </div>
+        </div>
+
+        <!-- Back-end -->
+        <div class="skill-category">
+          <span>Back-end</span>
+          <div class="tags-group">
+            <input type="checkbox" id="tag-node" class="skill-check">
+            <label for="tag-node" class="skill-btn">Node.js</label>
+
+            <input type="checkbox" id="tag-python" class="skill-check">
+            <label for="tag-python" class="skill-btn">Python</label>
+
+            <input type="checkbox" id="tag-java" class="skill-check">
+            <label for="tag-java" class="skill-btn">Java</label>
+
+            <input type="checkbox" id="tag-sql" class="skill-check">
+            <label for="tag-sql" class="skill-btn">SQL</label>
+
+            <input type="checkbox" id="tag-docker" class="skill-check">
+            <label for="tag-docker" class="skill-btn">Docker</label>
+          </div>
+        </div>
+      </div>
+
+      <!-- Upload de Currículo -->
+      <div class="upload-area">
+        <input type="file" id="file-input" accept=".pdf,.doc,.docx" hidden>
+        <label for="file-input" class="upload-btn">
+          ↑ Anexe seu currículo (PDF ou Word)
+        </label>
+      </div>
+
+      <!-- Botões do Formulário -->
+      <div class="form-actions">
+        <button type="submit" class="btn-primary">Salvar perfil</button>
+        <button type="reset" class="btn-secondary">Limpar</button>
+      </div>
+    </main>
+  </form>
+
+</body>
+</html>
+
+    <!-- FOOTER -->
+    <footer class="pt-5 pb-3 border-top">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3 mb-4">
+            <h5 class="fw-bold mb-3">Emprega-se aqui</h5>
+            <p class="text-muted small">
+              Conectamos talentos em início de carreira às melhores
+              oportunidades do mercado, com análise inteligente de
+              compatibilidade de perfil.
+            </p>
+          </div>
+
+          <div class="col-md-2 mb-4">
+            <h5 class="fw-bold mb-3">Empresa</h5>
+            <ul class="list-unstyled small">
+              <li class="mb-2">
+                <a href="#" class="text-decoration-none text-secondary"
+                  >Sobre nós</a
+                >
+              </li>
+              <li class="mb-2">
+                <a href="#" class="text-decoration-none text-secondary"
+                  >Para empresas</a
+                >
+              </li>
+              <li class="mb-2">
+                <a href="#" class="text-decoration-none text-secondary"
+                  >Criar currículo</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div class="col-md-2 mb-4">
+            <h5 class="fw-bold mb-3">Navegue</h5>
+            <ul class="list-unstyled small">
+              <li class="mb-2">
+                <a href="index.html" class="text-decoration-none text-secondary"
+                  >Início</a
+                >
+              </li>
+              <li class="mb-2">
+                <a href="#" class="text-decoration-none text-secondary"
+                  >Vagas</a
+                >
+              </li>
+              <li class="mb-2">
+                <a href="#" class="text-decoration-none text-secondary"
+                  >Currículos</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div class="col-md-2 mb-4">
+            <h5 class="fw-bold mb-3">Contato</h5>
+            <p class="small text-muted mb-1">(83) 91234-5678</p>
+            <p class="small text-muted">contato@emprega-se.com</p>
+          </div>
+
+          <div class="col-md-3 mb-4">
+            <h5 class="fw-bold mb-3">Redes Sociais</h5>
+            <ul class="list-unstyled small">
+              <li class="mb-2">
+                <a href="#" class="text-decoration-none text-secondary"
+                  >Instagram - Emprega-se Aqui</a
+                >
+              </li>
+              <li class="mb-2">
+                <a href="#" class="text-decoration-none text-secondary"
+                  >X - Emprega-se Aqui</a
+                >
+              </li>
+              <li class="mb-2">
+                <a href="#" class="text-decoration-none text-secondary"
+                  >TikTok - Emprega-se Aqui</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <hr class="my-4" />
+
+        <div class="text-center">
+          <p class="text-muted small mb-0">
+            &copy; 2026 Emprega-se Aqui. Todos os direitos reservados.
+          </p>
+        </div>
+
+        <div class="desenvolvedores">
+          <h6>Desenvolvedores</h6>
+          <p>
+            Vinicius Aglay <br />
+            Pedro Nunes <br />
+            Thiago Carvalho <br />
+            Murilo Lira <br />
+            Gabriel Farias <br />
+            Raimundo Neto <br />
+            João Lucas
+          </p>
+        </div>
+      </div>
+    </footer>
+</body>
+</html>
+
