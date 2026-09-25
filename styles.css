@@ -1,3 +1,10 @@
+/* =============================================
+   styles.css — Emprega-se Aqui
+   ============================================= */
+
+
+/* ===== GERAL ===== */
+
 body {
     font-family: Arial, sans-serif;
     background-color: #0d3447;
@@ -30,7 +37,9 @@ a:hover {
     color: #8aebcf;
 }
 
-/* Menu */
+
+/* ===== NAVBAR ===== */
+
 .navbar {
     background-color: #092a3a;
     padding: 14px 0;
@@ -70,7 +79,9 @@ a:hover {
     color: #43d6b0;
 }
 
-/* Banner e números */
+
+/* ===== BANNER E NÚMEROS ===== */
+
 #carouselBanner {
     max-width: 900px;
     margin: 28px auto;
@@ -103,7 +114,9 @@ body > hr {
     opacity: 1;
 }
 
-/* Passo a passo */
+
+/* ===== COMO FUNCIONA ===== */
+
 .como-funciona {
     text-align: center;
 }
@@ -132,6 +145,9 @@ body > hr {
     border-top: 3px solid #13b992;
     border-radius: 8px;
 }
+
+
+/* ===== CARDS GERAIS ===== */
 
 .card {
     background-color: #16485e;
@@ -172,7 +188,9 @@ body > hr {
     font-weight: 600;
 }
 
-/* Sobre e perguntas frequentes */
+
+/* ===== QUEM SOMOS E FAQ ===== */
+
 .quem-somos,
 .faq-section {
     max-width: 900px;
@@ -232,7 +250,9 @@ body > hr {
     color: #d4e3e9;
 }
 
-/* Comentários */
+
+/* ===== COMENTÁRIOS ===== */
+
 .comments-section {
     margin-top: 40px;
     margin-bottom: 48px;
@@ -337,7 +357,126 @@ button:focus-visible {
     color: #092a3a !important;
 }
 
-/* Rodapé */
+
+/* ===== PÁGINA DE ÁREAS ===== */
+
+.areas-hero {
+    background-color: #092a3a;
+    padding: 56px 0 40px;
+    text-align: center;
+    border-bottom: 3px solid #13b992;
+}
+
+.areas-rotulo {
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #43d6b0;
+    margin-bottom: 8px;
+}
+
+.areas-titulo {
+    font-size: 34px;
+    font-weight: 800;
+    color: #f4f8fa;
+    margin-bottom: 14px;
+}
+
+.areas-subtitulo {
+    font-size: 16px;
+    color: #b8ced8;
+    max-width: 520px;
+    margin: 0 auto;
+    line-height: 1.7;
+}
+
+.area-card {
+    background-color: #16485e;
+    border: 1px solid #365d70;
+    border-top: 3px solid #13b992;
+    border-radius: 8px;
+    padding: 28px 24px;
+    height: 100%;
+    transition: box-shadow 0.2s, transform 0.2s;
+}
+
+.area-card:hover {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+    transform: translateY(-4px);
+}
+
+.area-icone {
+    font-size: 34px;
+    margin-bottom: 14px;
+}
+
+.area-nome {
+    font-size: 18px;
+    font-weight: 700;
+    color: #f4f8fa;
+    margin-bottom: 10px;
+}
+
+.area-desc {
+    font-size: 14px;
+    color: #b8ced8;
+    line-height: 1.7;
+    margin-bottom: 18px;
+}
+
+.area-techs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+    margin-bottom: 20px;
+}
+
+.tech-tag {
+    background-color: #0d3447;
+    color: #43d6b0;
+    border: 1px solid #365d70;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 50px;
+}
+
+.area-link {
+    font-size: 13px;
+    font-weight: 600;
+    color: #43d6b0;
+    text-decoration: none;
+}
+
+.area-link:hover {
+    color: #8aebcf;
+    text-decoration: underline;
+}
+
+.areas-cta {
+    background-color: #092a3a;
+    border-top: 3px solid #13b992;
+    padding: 64px 0;
+    text-align: center;
+}
+
+.areas-cta h2 {
+    font-size: 30px;
+    font-weight: 800;
+    color: #f4f8fa;
+    margin-bottom: 10px;
+}
+
+.areas-cta p {
+    font-size: 16px;
+    color: #b8ced8;
+    margin-bottom: 28px;
+}
+
+
+/* ===== FOOTER ===== */
+
 footer {
     background-color: #092a3a;
     border-color: #365d70 !important;
@@ -374,31 +513,3 @@ footer hr {
     font-size: 13px;
 }
 
-/* Celular e tablet */
-@media (max-width: 767px) {
-    #carouselBanner {
-        margin: 20px 12px;
-    }
-
-    .cards.container,
-    .comment-slide {
-        flex-direction: column;
-        gap: 16px;
-    }
-
-    body > hr {
-        margin: 28px 12px;
-    }
-
-    .card-body,
-    .comment-form {
-        padding: 20px;
-    }
-}
-
-@media (max-width: 991px) {
-    .navbar-nav {
-        gap: 0;
-        margin-top: 12px;
-    }
-}
