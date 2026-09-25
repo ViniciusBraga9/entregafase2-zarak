@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Vagas — Emprega-se Aqui</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+        crossorigin="anonymous">
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg" data-bs-theme="dark">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img src="logo_emprega_se_aqui_30x35.png" alt="Logo" width="30" height="34" class="d-inline-block align-text-top"/>
+          Emprega-se Aqui
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Abrir menu">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Início</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="area.html">Área</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="vagas.html">Vagas</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="curriculo.html">Currículos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="perfil.html">Meu Perfil</a>
+            </li>
+            <a class="btn btn-primary" href="empresa.html" role="button">Para Empresa</a>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- HERO DA PÁGINA -->
+    <div class="vagas-hero">
+        <div class="container">
+            <p class="vagas-rotulo">Oportunidades abertas</p>
+            <h1 class="vagas-titulo">Encontre a vaga certa para você</h1>
+            <p class="vagas-subtitulo">
+                Explore vagas nas principais áreas de tecnologia, filtre por nível, modalidade
+                e localização, e descubra onde o seu perfil se encaixa.
+            </p>
+
+            <!-- BARRA DE BUSCA -->
+            <div class="vagas-busca">
+                <div class="input-group">
+                    <span class="input-group-text bg-transparent border-end-0">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#43d6b0" viewBox="0 0 16 16">
+                            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.099zm-5.242 1.656a5.5 5.5 0 1 1 0-11 5.5 5.5 0 0 1 0 11z"/>
+                        </svg>
+                    </span>
+                    <input type="search" id="buscaInput" class="form-control border-start-0" placeholder="Busque por cargo, empresa ou tecnologia...">
+                    <button class="btn btn-primary" type="button" id="buscaBtn">Buscar</button>
+                </div>
+            </div>
+
+            <!-- TAGS RÁPIDAS -->
+            <div class="vagas-tags">
+                <span class="vagas-tags-label">Popular:</span>
+                <button class="tag-rapida" data-filtro="Front-end">Front-end</button>
+                <button class="tag-rapida" data-filtro="Back-end">Back-end</button>
+                <button class="tag-rapida" data-filtro="Estágio">Estágio</button>
+                <button class="tag-rapida" data-filtro="Remoto">Remoto</button>
+                <button class="tag-rapida" data-filtro="Dados">Dados</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <div class="container my-5">
+        <div class="vagas-layout">
+
+            <!-- FILTROS LATERAIS -->
+            <aside class="vagas-filtros" id="filtrosAside">
+                <div class="filtros-header">
+                    <h3 class="filtros-titulo">Filtros</h3>
+                    <button class="btn-limpar" id="limparFiltros" type="button">Limpar</button>
+                </div>
+
+                <div class="filtro-grupo">
+                    <label class="filtro-label" for="filtroArea">Área</label>
+                    <div class="filtro-chips" id="filtroAreaChips">
+                        <button class="filtro-chip" data-tipo="area" data-valor="Front-end">Front-end</button>
+                        <button class="filtro-chip" data-tipo="area" data-valor="Back-end">Back-end</button>
+                        <button class="filtro-chip" data-tipo="area" data-valor="Full-Stack">Full-Stack</button>
+                        <button class="filtro-chip" data-tipo="area" data-valor="Dados">Dados</button>
+                        <button class="filtro-chip" data-tipo="area" data-valor="IA">IA</button>
+                        <button class="filtro-chip" data-tipo="area" data-valor="Segurança">Segurança</button>
+                        <button class="filtro-chip" data-tipo="area" data-valor="Design">Design</button>
+                        <button class="filtro-chip" data-tipo="area" data-valor="Mobile">Mobile</button>
+                    </div>
+                </div>
+
+                <div class="filtro-grupo">
+                    <p class="filtro-label">Modalidade</p>
+                    <div class="filtro-checks">
+                        <label><input type="checkbox" value="Remoto"> Remoto</label>
+                        <label><input type="checkbox" value="Híbrido"> Híbrido</label>
+                        <label><input type="checkbox" value="Presencial"> Presencial</label>
+                    </div>
+                </div>
+
+                <div class="filtro-grupo">
+                    <p class="filtro-label">Nível</p>
+                    <div class="filtro-checks">
+                        <label><input type="checkbox" value="Estágio"> Estágio</label>
+                        <label><input type="checkbox" value="Júnior"> Júnior</label>
+                        <label><input type="checkbox" value="Pleno"> Pleno</label>
+                        <label><input type="checkbox" value="Sênior"> Sênior</label>
+                    </div>
+                </div>
+
+                <div class="filtro-grupo">
+                    <label class="filtro-label" for="filtrocidade">Cidade</label>
+                    <select class="form-select filtro-select" id="filtrocidade">
+                        <option value="">Todas as cidades</option>
+                        <option>Campina Grande</option>
+                        <option>João Pessoa</option>
+                        <option>Recife</option>
+                        <option>Fortaleza</option>
+                        <option>Salvador</option>
+                        <option>Natal</option>
+                    </select>
+                </div>
+            </aside>
+
+            <!-- LISTA DE VAGAS -->
+            <div class="vagas-resultados">
+
+                <div class="resultados-barra">
+                    <p class="resultados-contagem" id="contagem"><b>22</b> vagas encontradas</p>
+                    <div class="resultados-acoes">
+                        <button class="btn btn-ghost btn-sm" id="filtroToggle" type="button">Filtros</button>
+                        <select class="filtro-select" id="ordenar">
+                            <option value="recente">Mais recentes</option>
+                            <option value="salario">Maior salário</option>
+                            <option value="compatibilidade">Mais compatíveis</option>
+                        </select>
+                    </div>
+                </div>
+
+                <ul class="lista-vagas" id="listaVagas">
+
+                    <li class="vaga-card" tabindex="0">
+                        <div class="vaga-logo" style="--c:#1f6c91">NV</div>
+                        <div class="vaga-info">
+                            <h5 class="vaga-titulo-card">Desenvolvedor(a) Front-end Jr.</h5>
+                            <div class="vaga-meta">
+                                <span>Nuvem Verde</span>
+                                <span>Campina Grande — PB</span>
+                                <span>Híbrido</span>
+                                <span>Júnior</span>
+                                <span>Hoje</span>
+                            </div>
+                            <div class="vaga-tags">
+                                <span class="vaga-tag vaga-tag-nova">Nova</span>
+                                <span class="vaga-tag">JavaScript</span>
+                                <span class="vaga-tag">HTML e CSS</span>
+                                <span class="vaga-tag">React</span>
+                                <span class="vaga-tag">Git</span>
+                            </div>
+                        </div>
+                        <div class="vaga-lado">
+                            <span class="vaga-salario">R$ 2.800 – R$ 3.600</span>
+                        </div>
+                    </li>
+
+                    <li class="vaga-card" tabindex="0">
+                        <div class="vaga-logo" style="--c:#123b52">BT</div>
+                        <div class="vaga-info">
+                            <h5 class="vaga-titulo-card">Estágio em Desenvolvimento Web</h5>
+                            <div class="vaga-meta">
+                                <span>Borborema Tech</span>
+                                <span>Campina Grande — PB</span>
+                                <span>Presencial</span>
+                                <span>Estágio</span>
+                                <span>Ontem</span>
+                            </div>
+                            <div class="vaga-tags">
+                                <span class="vaga-tag">HTML e CSS</span>
+                                <span class="vaga-tag">JavaScript</span>
+                                <span class="vaga-tag">Git</span>
+                            </div>
+                        </div>
+                        <div class="vaga-lado">
+                            <span class="vaga-salario">R$ 1.200</span>
+                        </div>
+                    </li>
+
+                    <li class="vaga-card" tabindex="0">
+                        <div class="vaga-logo" style="--c:#20b486">MA</div>
+                        <div class="vaga-info">
+                            <h5 class="vaga-titulo-card">Analista de Dados Jr.</h5>
+                            <div class="vaga-meta">
+                                <span>Mandacaru Analytics</span>
+                                <span>João Pessoa — PB</span>
+                                <span>Híbrido</span>
+                                <span>Júnior</span>
+                                <span>Há 3 dias</span>
+                            </div>
+                            <div class="vaga-tags">
+                                <span class="vaga-tag">SQL</span>
+                                <span class="vaga-tag">Power BI</span>
+                                <span class="vaga-tag">Python</span>
+                                <span class="vaga-tag">Excel</span>
+                            </div>
+                        </div>
+                        <div class="vaga-lado">
+                            <span class="vaga-salario">R$ 3.200 – R$ 4.200</span>
+                        </div>
+                    </li>
+
+                    <li class="vaga-card" tabindex="0">
+                        <div class="vaga-logo" style="--c:#3a5a8c">SC</div>
+                        <div class="vaga-info">
+                            <h5 class="vaga-titulo-card">Desenvolvedor(a) Back-end Node.js</h5>
+                            <div class="vaga-meta">
+                                <span>Sertão Code</span>
+                                <span>Recife — PE</span>
+                                <span>Remoto</span>
+                                <span>Júnior</span>
+                                <span>Há 4 dias</span>
+                            </div>
+                            <div class="vaga-tags">
+                                <span class="vaga-tag">Node.js</span>
+                                <span class="vaga-tag">JavaScript</span>
+                                <span class="vaga-tag">SQL</span>
+                                <span class="vaga-tag">Docker</span>
+                            </div>
+                        </div>
+                        <div class="vaga-lado">
+                            <span class="vaga-salario">R$ 3.500 – R$ 4.500</span>
+                        </div>
+                    </li>
+
+                    <li class="vaga-card" tabindex="0">
+                        <div class="vaga-logo" style="--c:#7a4bb5">AL</div>
+                        <div class="vaga-info">
+                            <h5 class="vaga-titulo-card">Estágio em Ciência de Dados</h5>
+                            <div class="vaga-meta">
+                                <span>Atlântico Labs</span>
+                                <span>Recife — PE</span>
+                                <span>Híbrido</span>
+                                <span>Estágio</span>
+                                <span>Ontem</span>
+                            </div>
+                            <div class="vaga-tags">
+                                <span class="vaga-tag">Python</span>
+                                <span class="vaga-tag">Pandas</span>
+                                <span class="vaga-tag">Estatística</span>
+                                <span class="vaga-tag">Inglês</span>
+                            </div>
+                        </div>
+                        <div class="vaga-lado">
+                            <span class="vaga-salario">R$ 1.500 – R$ 1.800</span>
+                        </div>
+                    </li>
+
+                    <li class="vaga-card" tabindex="0">
+                        <div class="vaga-logo" style="--c:#c2553d">ED</div>
+                        <div class="vaga-info">
+                            <h5 class="vaga-titulo-card">Analista de Segurança da Informação Jr.</h5>
+                            <div class="vaga-meta">
+                                <span>Escudo Digital</span>
+                                <span>João Pessoa — PB</span>
+                                <span>Híbrido</span>
+                                <span>Júnior</span>
+                                <span>Há 5 dias</span>
+                            </div>
+                            <div class="vaga-tags">
+                                <span class="vaga-tag">Linux</span>
+                                <span class="vaga-tag">Redes</span>
+                                <span class="vaga-tag">Segurança da Informação</span>
+                            </div>
+                        </div>
+                        <div class="vaga-lado">
+                            <span class="vaga-salario">R$ 3.800 – R$ 4.800</span>
+                        </div>
+                    </li>
+
+                    <li class="vaga-card" tabindex="0">
+                        <div class="vaga-logo" style="--c:#d08a1c">CS</div>
+                        <div class="vaga-info">
+                            <h5 class="vaga-titulo-card">UI Designer Jr.</h5>
+                            <div class="vaga-meta">
+                                <span>Cactus Studio</span>
+                                <span>Natal — RN</span>
+                                <span>Remoto</span>
+                                <span>Júnior</span>
+                                <span>Há 6 dias</span>
+                            </div>
+                            <div class="vaga-tags">
+                                <span class="vaga-tag">Figma</span>
+                                <span class="vaga-tag">HTML e CSS</span>
+                                <span class="vaga-tag">Comunicação</span>
+                            </div>
+                        </div>
+                        <div class="vaga-lado">
+                            <span class="vaga-salario">R$ 2.600 – R$ 3.400</span>
+                        </div>
+                    </li>
+
+                    <li class="vaga-card" tabindex="0">
+                        <div class="vaga-logo" style="--c:#2a8a9e">RA</div>
+                        <div class="vaga-info">
+                            <h5 class="vaga-titulo-card">Desenvolvedor(a) Mobile React Native</h5>
+                            <div class="vaga-meta">
+                                <span>Rota App</span>
+                                <span>Fortaleza — CE</span>
+                                <span>Remoto</span>
+                                <span>Júnior</span>
+                                <span>Há 2 dias</span>
+                            </div>
+                            <div class="vaga-tags">
+                                <span class="vaga-tag">React</span>
+                                <span class="vaga-tag">JavaScript</span>
+                                <span class="vaga-tag">TypeScript</span>
+                                <span class="vaga-tag">APIs REST</span>
+                            </div>
+                        </div>
+                        <div class="vaga-lado">
+                            <span class="vaga-salario">R$ 3.300 – R$ 4.300</span>
+                        </div>
+                    </li>
+
+                </ul>
+
+                <div class="ver-mais-wrap">
+                    <button class="btn btn-ghost" type="button" id="verMaisBtn">Ver mais vagas</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- CTA FINAL -->
+    <div class="vagas-cta">
+        <div class="container">
+            <h2>Seu próximo emprego começa aqui.</h2>
+            <p>Crie seu currículo e apareça para as empresas certas.</p>
+            <a href="curriculo.html" class="btn btn-primary">Criar meu currículo</a>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="pt-5 pb-3 border-top">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 mb-4">
+                    <h5 class="fw-bold mb-3">Emprega-se aqui</h5>
+                    <p class="text-muted small">
+                        Conectamos talentos em início de carreira às melhores
+                        oportunidades do mercado, com análise inteligente de
+                        compatibilidade de perfil.
+                    </p>
+                </div>
+
+                <div class="col-md-2 mb-4">
+                    <h5 class="fw-bold mb-3">Empresa</h5>
+                    <ul class="list-unstyled small">
+                        <li class="mb-2"><a href="#" class="text-decoration-none text-secondary">Sobre nós</a></li>
+                        <li class="mb-2"><a href="#" class="text-decoration-none text-secondary">Para empresas</a></li>
+                        <li class="mb-2"><a href="#" class="text-decoration-none text-secondary">Criar currículo</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-md-2 mb-4">
+                    <h5 class="fw-bold mb-3">Navegue</h5>
+                    <ul class="list-unstyled small">
+                        <li class="mb-2"><a href="index.html" class="text-decoration-none text-secondary">Início</a></li>
+                        <li class="mb-2"><a href="vagas.html" class="text-decoration-none text-secondary">Vagas</a></li>
+                        <li class="mb-2"><a href="curriculo.html" class="text-decoration-none text-secondary">Currículos</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-md-2 mb-4">
+                    <h5 class="fw-bold mb-3">Contato</h5>
+                    <p class="small text-muted mb-1">(83) 91234-5678</p>
+                    <p class="small text-muted">contato@emprega-se.com</p>
+                </div>
+
+                <div class="col-md-3 mb-4">
+                    <h5 class="fw-bold mb-3">Redes Sociais</h5>
+                    <ul class="list-unstyled small">
+                        <li class="mb-2"><a href="#" class="text-decoration-none text-secondary">Instagram - Emprega-se Aqui</a></li>
+                        <li class="mb-2"><a href="#" class="text-decoration-none text-secondary">X - Emprega-se Aqui</a></li>
+                        <li class="mb-2"><a href="#" class="text-decoration-none text-secondary">TikTok - Emprega-se Aqui</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <hr class="my-4" />
+
+            <div class="text-center">
+                <p class="text-muted small mb-0">&copy; 2026 Emprega-se Aqui. Todos os direitos reservados.</p>
+            </div>
+
+            <div class="desenvolvedores">
+                <h6>Desenvolvedores</h6>
+                <p>
+                    Vinicius Aglay <br />
+                    Pedro Nunes <br />
+                    Thiago Carvalho <br />
+                    Murilo Lira <br />
+                    Gabriel Farias <br />
+                    Raimundo Neto <br />
+                    João Lucas
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJvWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+
+    <script>
+        // Busca simples
+        const buscaInput = document.getElementById('buscaInput');
+        const listaVagas = document.getElementById('listaVagas');
+
+        function filtrarVagas() {
+            const termo = buscaInput.value.toLowerCase();
+            const cards = listaVagas.querySelectorAll('.vaga-card');
+            let visiveis = 0;
+            cards.forEach(card => {
+                const texto = card.textContent.toLowerCase();
+                const visivel = texto.includes(termo);
+                card.style.display = visivel ? '' : 'none';
+                if (visivel) visiveis++;
+            });
+            document.getElementById('contagem').innerHTML = `<b>${visiveis}</b> ${visiveis === 1 ? 'vaga encontrada' : 'vagas encontradas'}`;
+        }
+
+        document.getElementById('buscaBtn').addEventListener('click', filtrarVagas);
+        buscaInput.addEventListener('keydown', e => { if (e.key === 'Enter') filtrarVagas(); });
+
+        // Tags rápidas
+        document.querySelectorAll('.tag-rapida').forEach(btn => {
+            btn.addEventListener('click', () => {
+                buscaInput.value = btn.dataset.filtro;
+                filtrarVagas();
+            });
+        });
+
+        // Filtro por chips de área
+        document.querySelectorAll('.filtro-chip').forEach(chip => {
+            chip.addEventListener('click', () => {
+                chip.classList.toggle('ativo');
+                buscaInput.value = chip.dataset.valor;
+                filtrarVagas();
+            });
+        });
+
+        // Limpar filtros
+        document.getElementById('limparFiltros').addEventListener('click', () => {
+            buscaInput.value = '';
+            document.querySelectorAll('.filtro-chip').forEach(c => c.classList.remove('ativo'));
+            document.querySelectorAll('.filtro-checks input').forEach(c => c.checked = false);
+            document.getElementById('filtrocidade').value = '';
+            filtrarVagas();
+        });
+    </script>
+
+</body>
+</html>
