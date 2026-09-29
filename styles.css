@@ -938,3 +938,54 @@ footer hr {
     font-size: 13px;
 }
 
+
+/* ===== ACESSO DA EMPRESA ===== */
+.navbar .acesso-empresa {
+    order: 3;
+    margin-left: 20px;
+    white-space: nowrap;
+}
+
+.empresa-card {
+    max-width: 650px;
+    margin: 40px auto;
+    padding: 28px;
+    background-color: #092a3a;
+    border: 1px solid #365d70;
+    border-radius: 8px;
+}
+
+.empresa-card h1 {
+    font-size: 28px;
+    color: #43d6b0;
+}
+
+.empresa-card dd {
+    margin-bottom: 16px;
+    overflow-wrap: anywhere;
+}
+
+@media (max-width: 991px) {
+    .navbar .acesso-empresa {
+        order: 0;
+        margin-left: auto;
+        font-size: 13px;
+    }
+
+    .navbar .navbar-toggler {
+        margin-left: 10px;
+    }
+}
+
+@media (max-width: 575px) {
+    .navbar .navbar-brand {
+        font-size: 14px;
+        gap: 5px;
+        margin-right: 5px;
+    }
+
+    .navbar .navbar-toggler {
+        margin-top: 8px;
+        margin-left: auto;
+    }
+}
