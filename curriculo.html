@@ -1,49 +1,789 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
-      crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="styles.css" />
-    <title>Currículos - Emprega-se Aqui</title>
-  </head>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+        crossorigin="anonymous">
+
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="curriculo.css">
+
+    <title>Currículos — Emprega-se Aqui</title>
+</head>
+
 <body>
-    <nav class="navbar navbar-expand-lg" data-bs-theme="dark">
-        <div class="container">
-            <a class="navbar-brand" href="index.html">
-                <img src="logo_emprega_se_aqui_30x35.png" alt="Logo" width="30" height="34" class="d-inline-block align-text-top">
-                Emprega-se Aqui
-            </a>
-            <a class="btn btn-primary acesso-empresa" href="empresa.html" target="_blank" rel="noopener noreferrer">Entrar/Cadastrar</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Abrir menu">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Vagas</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="curriculo.html">Currículos</a>
-                    </li>
-                </ul>
-            </div>
+
+    <!-- NAVBAR -->
+     <nav class="navbar navbar-expand-lg" data-bs-theme="dark">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img src ="img/logo_emprega_se_aqui_30x35.png" alt="Logo" width="30" height="34" class="d-inline-block align-text-top"/>
+          Emprega-se Aqui
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Abrir menu">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="index.html">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="area.html">Sobre Áreas</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="vagas.html">Vagas</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="curriculo.html">Currículos</a>
+            </li>
+
+            <li class = "nav-item">
+              <a class ="nav-link" href="perfil.html">Meu Perfil</a>
+            </li>
+
+            <a class="btn btn-primary" href="empresa.html" role="button">Para Empresas</a>
+          </ul>
         </div>
       </div>
     </nav>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-      crossorigin="anonymous"
-    ></script>
+
+
+    <!-- HERO -->
+    <div class="cur-hero">
+        <div class="container">
+
+            <p class="cur-rotulo">Modelos de currículo</p>
+
+            <h1 class="cur-titulo">
+                Encontre um modelo para começar
+            </h1>
+
+            <p class="cur-subtitulo">
+                Escolha o layout que combina com você, veja a prévia e use como referência
+                para montar seu currículo em qualquer editor de documentos.
+            </p>
+
+            <div class="cur-stats">
+
+                <div class="cur-stat">
+                    <strong>3</strong>
+                    <p>Modelos disponíveis</p>
+                </div>
+
+                <div class="cur-stat">
+                    <strong>+1.200</strong>
+                    <p>Downloads realizados</p>
+                </div>
+
+                <div class="cur-stat">
+                    <strong>100%</strong>
+                    <p>Gratuito</p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <!-- COMO USAR -->
+    <div class="container cur-como-usar">
+
+        <div class="cur-secao-titulo">
+            <p class="cur-rotulo-secao">Passo a passo</p>
+            <h2>Como usar os modelos</h2>
+        </div>
+
+        <div class="row g-3">
+
+            <div class="col-12 col-md-6 col-lg-3">
+                <div class="cur-passo">
+
+                    <div class="cur-passo-num">1</div>
+                    <div class="cur-passo-icone">🔍</div>
+
+                    <h4>Escolha o modelo</h4>
+
+                    <p>
+                        Veja os modelos disponíveis e escolha o que mais combina com seu perfil.
+                    </p>
+
+                </div>
+            </div>
+
+
+            <div class="col-12 col-md-6 col-lg-3">
+                <div class="cur-passo">
+
+                    <div class="cur-passo-num">2</div>
+                    <div class="cur-passo-icone">👁️</div>
+
+                    <h4>Veja a prévia</h4>
+
+                    <p>
+                        Visualize o modelo antes de escolher o currículo que deseja utilizar.
+                    </p>
+
+                </div>
+            </div>
+
+
+            <div class="col-12 col-md-6 col-lg-3">
+                <div class="cur-passo">
+
+                    <div class="cur-passo-num">3</div>
+                    <div class="cur-passo-icone">📥</div>
+
+                    <h4>Baixe a imagem</h4>
+
+                    <p>
+                        Faça o download do modelo em JPEG para usar como referência visual.
+                    </p>
+
+                </div>
+            </div>
+
+
+            <div class="col-12 col-md-6 col-lg-3">
+                <div class="cur-passo">
+
+                    <div class="cur-passo-num">4</div>
+                    <div class="cur-passo-icone">✍️</div>
+
+                    <h4>Monte o seu</h4>
+
+                    <p>
+                        Abra o Word ou LibreOffice e monte seu currículo usando o modelo como guia.
+                    </p>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <!-- GALERIA -->
+    <div class="container cur-galeria-secao">
+
+        <div class="cur-galeria-topo">
+
+            <div class="cur-secao-titulo">
+                <p class="cur-rotulo-secao">Galeria</p>
+                <h2>Escolha seu modelo</h2>
+            </div>
+
+        </div>
+
+
+        <div class="row g-4" id="galeria">
+
+            <!-- Modelo 1 -->
+            <div class="col-12 col-md-6 col-lg-4 d-flex cur-item">
+                <div class="cur-card w-100">
+
+                    <div class="cur-card-img-wrap">
+
+                        <img src="img/curriculo1.jpeg"
+                            alt="Modelo 1 — simples e organizado"
+                            loading="lazy">
+
+                        <p class="cur-badge popular">
+                            ⭐ Mais baixado
+                        </p>
+
+                    </div>
+
+
+                    <div class="cur-card-body">
+
+                        <div class="cur-card-topo">
+
+                            <h3 class="cur-card-titulo">
+                                Modelo 1 — Simples
+                            </h3>
+
+                            <p class="cur-estilo-tag">
+                                Simples
+                            </p>
+
+                        </div>
+
+
+                        <p class="cur-card-desc">
+                            Apresentação clara e organizada. Ideal para quem está
+                            entrando no mercado e quer destacar habilidades e formação.
+                        </p>
+
+
+                        <div class="cur-card-info">
+
+                            <p>📥 842 downloads</p>
+                            <p>⭐ Iniciantes</p>
+
+                        </div>
+
+
+                        <div class="cur-card-acoes">
+
+                            <a class="btn btn-primary"
+                                href="img/curriculo1.jpeg"
+                                download="curriculo1.jpeg">
+                                📥 Baixar
+                            </a>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Modelo 2 -->
+            <div class="col-12 col-md-6 col-lg-4 d-flex cur-item">
+
+                <div class="cur-card w-100">
+
+                    <div class="cur-card-img-wrap">
+
+                        <img src="img/curriculo2.jpeg"
+                            alt="Modelo 2 — moderno"
+                            loading="lazy">
+
+                        <p class="cur-badge novo">
+                            🆕 Novo
+                        </p>
+
+                    </div>
+
+
+                    <div class="cur-card-body">
+
+                        <div class="cur-card-topo">
+
+                            <h3 class="cur-card-titulo">
+                                Modelo 2 — Moderno
+                            </h3>
+
+                            <p class="cur-estilo-tag moderno">
+                                Moderno
+                            </p>
+
+                        </div>
+
+
+                        <p class="cur-card-desc">
+                            Visual contemporâneo com boa hierarquia de informações.
+                            Ótimo para vagas em empresas de tecnologia.
+                        </p>
+
+
+                        <div class="cur-card-info">
+
+                            <p>📥 530 downloads</p>
+                            <p>💻 Tech</p>
+
+                        </div>
+
+
+                        <div class="cur-card-acoes">
+
+                            <a class="btn btn-primary"
+                                href="downloads/curriculo2.jpeg"
+                                download="curriculo2.jpeg">
+                                📥 Baixar
+                            </a>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Modelo 3 -->
+            <div class="col-12 col-md-6 col-lg-4 d-flex cur-item">
+
+                <div class="cur-card w-100">
+
+                    <div class="cur-card-img-wrap">
+
+                        <img src="img/curriculo3.jpeg"
+                            alt="Modelo 3 — minimalista"
+                            loading="lazy">
+
+                    </div>
+
+
+                    <div class="cur-card-body">
+
+                        <div class="cur-card-topo">
+
+                            <h3 class="cur-card-titulo">
+                                Modelo 3 — Minimalista
+                            </h3>
+
+                            <p class="cur-estilo-tag minimalista">
+                                Minimalista
+                            </p>
+
+                        </div>
+
+
+                        <p class="cur-card-desc">
+                            Layout limpo e objetivo. Deixa o conteúdo falar por si,
+                            sem distrações visuais.
+                        </p>
+
+
+                        <div class="cur-card-info">
+
+                            <p>📥 378 downloads</p>
+                            <p>🎯 Objetivo</p>
+
+                        </div>
+
+
+                        <div class="cur-card-acoes">
+
+                            <a class="btn btn-primary"
+                                href="img/curriculo3.jpeg"
+                                download="curriculo3.jpeg">
+                                📥 Baixar
+                            </a>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="cur-aviso mt-4">
+            ⚠️ Os arquivos disponíveis são imagens JPEG, não documentos editáveis.
+            Use o modelo escolhido como referência ao criar seu currículo no editor.
+        </div>
+
+    </div>
+
+
+    <!-- CHECKLIST -->
+    <div class="cur-checklist-secao">
+
+        <div class="container">
+
+            <div class="cur-secao-titulo text-center mb-4">
+
+                <p class="cur-rotulo-secao">
+                    Dica da plataforma
+                </p>
+
+                <h2>
+                    O que não pode faltar no seu currículo
+                </h2>
+
+            </div>
+
+
+            <div class="row g-3 justify-content-center">
+
+
+                <div class="col-md-6 col-lg-4">
+
+                    <div class="check-item">
+
+                        <p class="check-ok">✅</p>
+
+                        <div>
+
+                            <strong>
+                                Nome e contato
+                            </strong>
+
+                            <p>
+                                Telefone, e-mail e cidade.
+                                LinkedIn e GitHub são um diferencial.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="col-md-6 col-lg-4">
+
+                    <div class="check-item">
+
+                        <p class="check-ok">✅</p>
+
+                        <div>
+
+                            <strong>
+                                Objetivo profissional
+                            </strong>
+
+                            <p>
+                                Duas frases dizendo para qual vaga você está se candidatando
+                                e o que oferece.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="col-md-6 col-lg-4">
+
+                    <div class="check-item">
+
+                        <p class="check-ok">✅</p>
+
+                        <div>
+
+                            <strong>
+                                Formação acadêmica
+                            </strong>
+
+                            <p>
+                                Curso, instituição e ano de conclusão previsto ou real.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="col-md-6 col-lg-4">
+
+                    <div class="check-item">
+
+                        <p class="check-ok">✅</p>
+
+                        <div>
+
+                            <strong>
+                                Habilidades técnicas
+                            </strong>
+
+                            <p>
+                                Liste as tecnologias e ferramentas que você domina
+                                ou está aprendendo.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="col-md-6 col-lg-4">
+
+                    <div class="check-item">
+
+                        <p class="check-ok">✅</p>
+
+                        <div>
+
+                            <strong>
+                                Projetos ou experiências
+                            </strong>
+
+                            <p>
+                                Mesmo que seja projeto de faculdade ou pessoal,
+                                coloque com o que foi feito.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="col-md-6 col-lg-4">
+
+                    <div class="check-item">
+
+                        <p class="check-ok">✅</p>
+
+                        <div>
+
+                            <strong>
+                                Idiomas
+                            </strong>
+
+                            <p>
+                                Informe o nível de cada idioma:
+                                básico, intermediário, avançado ou fluente.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- FAQ -->
+<div class="container cur-faq-secao">
+
+    <div class="cur-secao-titulo text-center mb-4">
+
+        <p class="cur-rotulo-secao">
+            Dúvidas
+        </p>
+
+        <h2>
+            Perguntas frequentes
+        </h2>
+
+    </div>
+
+
+    <div class="cur-accordion">
+
+        <!-- Pergunta 1 -->
+        <div class="accordion-item">
+
+            <div class="accordion-header">
+                Posso usar os modelos para qualquer área?
+            </div>
+
+            <div class="accordion-body">
+                Sim! Os modelos são genéricos e funcionam para qualquer área.
+                Você adapta o conteúdo conforme sua formação e habilidades.
+            </div>
+
+        </div>
+
+
+        <!-- Pergunta 2 -->
+        <div class="accordion-item">
+
+            <div class="accordion-header">
+                O currículo precisa ter foto?
+            </div>
+
+            <div class="accordion-body">
+                Não é obrigatório. Em tecnologia, a maioria das empresas não exige foto.
+                Se colocar, use uma foto profissional com fundo neutro.
+            </div>
+
+        </div>
+
+
+        <!-- Pergunta 3 -->
+        <div class="accordion-item">
+
+            <div class="accordion-header">
+                Qual o tamanho ideal do currículo?
+            </div>
+
+            <div class="accordion-body">
+                Para quem está começando, uma página é suficiente.
+                Não force duas páginas com conteúdo desnecessário.
+            </div>
+
+        </div>
+
+
+        <!-- Pergunta 4 -->
+        <div class="accordion-item">
+
+            <div class="accordion-header">
+                Devo salvar o currículo em PDF ou Word?
+            </div>
+
+            <div class="accordion-body">
+                Sempre envie em PDF. Garante que a formatação seja preservada
+                em qualquer dispositivo ou sistema operacional.
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+    <!-- FOOTER -->
+    <footer class="pt-5 pb-3 border-top">
+
+        <div class="container">
+
+            <div class="row">
+
+
+                <div class="col-md-3 mb-4">
+
+                    <h5 class="fw-bold mb-3">
+                        Emprega-se aqui
+                    </h5>
+
+                    <p class="text-muted small">
+                        Conectamos talentos em início de carreira às melhores oportunidades do mercado.
+                    </p>
+
+                </div>
+
+
+                <div class="col-md-2 mb-4">
+
+                    <h5 class="fw-bold mb-3">
+                        Empresa
+                    </h5>
+
+                    <ul class="list-unstyled small">
+
+                        <li class="mb-2">
+                            <a href="#" class="text-decoration-none text-secondary">
+                                Sobre nós
+                            </a>
+                        </li>
+
+                        <li class="mb-2">
+                            <a href="#" class="text-decoration-none text-secondary">
+                                Para empresas
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+                <div class="col-md-2 mb-4">
+
+                    <h5 class="fw-bold mb-3">
+                        Navegue
+                    </h5>
+
+                    <ul class="list-unstyled small">
+
+                        <li class="mb-2">
+                            <a href="index.html" class="text-decoration-none text-secondary">
+                                Início
+                            </a>
+                        </li>
+
+                        <li class="mb-2">
+                            <a href="#" class="text-decoration-none text-secondary">
+                                Vagas
+                            </a>
+                        </li>
+
+                        <li class="mb-2">
+                            <a href="curriculo.html" class="text-decoration-none text-secondary">
+                                Currículos
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+                <div class="col-md-2 mb-4">
+
+                    <h5 class="fw-bold mb-3">
+                        Contato
+                    </h5>
+
+                    <p class="small text-muted mb-1">
+                        (83) 91234-5678
+                    </p>
+
+                    <p class="small text-muted">
+                        contato@emprega-se.com
+                    </p>
+
+                </div>
+
+
+                <div class="col-md-3 mb-4">
+
+                    <h5 class="fw-bold mb-3">
+                        Redes Sociais
+                    </h5>
+
+                    <ul class="list-unstyled small">
+
+                        <li class="mb-2">
+                            <a href="#" class="text-decoration-none text-secondary">
+                                Instagram
+                            </a>
+                        </li>
+
+                        <li class="mb-2">
+                            <a href="#" class="text-decoration-none text-secondary">
+                                X (Twitter)
+                            </a>
+                        </li>
+
+                        <li class="mb-2">
+                            <a href="#" class="text-decoration-none text-secondary">
+                                TikTok
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+
+            <hr class="my-4">
+
+
+            <div class="text-center">
+
+                <p class="text-muted small mb-0">
+                    &copy; 2026 Emprega-se Aqui. Todos os direitos reservados.
+                </p>
+
+            </div>
+
+            <div class="desenvolvedores">
+
+                <h6>Desenvolvedores</h6>
+
+                <p>
+                    Vinicius Aglay <br>
+                    Pedro Nunes <br>
+                    Thiago Carvalho <br>
+                    Murilo Lira <br>
+                    Gabriel Farias <br>
+                    Raimundo Neto <br>
+                    João Lucas
+                </p>
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJvWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+
 </body>
+
 </html>
+```
