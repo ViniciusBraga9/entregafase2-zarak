@@ -180,10 +180,3 @@ document.querySelectorAll(".cur-accordion .accordion-header").forEach(function (
         }
     });
 });
-
-document.querySelectorAll('.cur-accordion .accordion-header').forEach(header => {
-    header.addEventListener('click', () => {
-      const item = header.parentElement;
-      item.classList.toggle('aberto');
-    });
-  });
