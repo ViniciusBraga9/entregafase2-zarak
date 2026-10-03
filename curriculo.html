@@ -5,12 +5,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
         crossorigin="anonymous">
 
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="curriculo.css">
 
     <title>Currículos — Emprega-se Aqui</title>
 </head>
@@ -18,36 +17,35 @@
 <body>
 
     <!-- NAVBAR -->
-     <nav class="navbar navbar-expand-lg" data-bs-theme="dark">
+    <nav class="navbar navbar-expand-lg" data-bs-theme="dark">
       <div class="container">
         <a class="navbar-brand" href="index.html">
-          <img src ="img/logo_emprega_se_aqui_30x35.png" alt="Logo" width="30" height="34" class="d-inline-block align-text-top"/>
+          <img src="logo_emprega_se_aqui_30x35.png" alt="Logo" width="30" height="34" class="d-inline-block align-text-top"/>
           Emprega-se Aqui
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Abrir menu">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav">
+          <ul class="navbar-nav ms-auto align-items-lg-center">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="index.html">Inicio</a>
+              <a class="nav-link active" aria-current="page" href="index.html">Início</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="area.html">Sobre Áreas</a>
             </li>
-
             <li class="nav-item">
               <a class="nav-link" href="vagas.html">Vagas</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="curriculo.html">Currículos</a>
             </li>
-
-            <li class = "nav-item">
-              <a class ="nav-link" href="perfil.html">Meu Perfil</a>
+            <li class="nav-item">
+              <a class="nav-link" href="perfil.html">Meu Perfil</a>
             </li>
-
-            <a class="btn btn-primary" href="empresa.html" role="button">Para Empresas</a>
+            <li class="nav-item ms-lg-2 mt-2 mt-lg-0">
+              <a class="btn btn-primary" href="empresa.html" role="button">Para Empresas</a>
+            </li>
           </ul>
         </div>
       </div>
@@ -189,7 +187,7 @@
 
                     <div class="cur-card-img-wrap">
 
-                        <img src="img/curriculo1.jpeg"
+                        <img src="template curriculo 01.jpg"
                             alt="Modelo 1 — simples e organizado"
                             loading="lazy">
 
@@ -251,7 +249,7 @@
 
                     <div class="cur-card-img-wrap">
 
-                        <img src="img/curriculo2.jpeg"
+                        <img src="template curriculo 02.jpg"
                             alt="Modelo 2 — moderno"
                             loading="lazy">
 
@@ -313,7 +311,7 @@
 
                     <div class="cur-card-img-wrap">
 
-                        <img src="img/curriculo3.jpeg"
+                        <img src="template curriculo 03.jpg"
                             alt="Modelo 3 — minimalista"
                             loading="lazy">
 
@@ -545,85 +543,85 @@
 
 
     <!-- FAQ -->
-<div class="container cur-faq-secao">
+    <div class="container cur-faq-secao">
 
-    <div class="cur-secao-titulo text-center mb-4">
+        <div class="cur-secao-titulo text-center mb-4">
 
-        <p class="cur-rotulo-secao">
-            Dúvidas
-        </p>
+            <p class="cur-rotulo-secao">
+                Dúvidas
+            </p>
 
-        <h2>
-            Perguntas frequentes
-        </h2>
+            <h2>
+                Perguntas frequentes
+            </h2>
+
+        </div>
+
+
+        <div class="cur-accordion">
+
+            <!-- Pergunta 1 -->
+            <div class="accordion-item">
+
+                <div class="accordion-header">
+                    Posso usar os modelos para qualquer área?
+                </div>
+
+                <div class="accordion-body">
+                    Sim! Os modelos são genéricos e funcionam para qualquer área.
+                    Você adapta o conteúdo conforme sua formação e habilidades.
+                </div>
+
+            </div>
+
+
+            <!-- Pergunta 2 -->
+            <div class="accordion-item">
+
+                <div class="accordion-header">
+                    O currículo precisa ter foto?
+                </div>
+
+                <div class="accordion-body">
+                    Não é obrigatório. Em tecnologia, a maioria das empresas não exige foto.
+                    Se colocar, use uma foto profissional com fundo neutro.
+                </div>
+
+            </div>
+
+
+            <!-- Pergunta 3 -->
+            <div class="accordion-item">
+
+                <div class="accordion-header">
+                    Qual o tamanho ideal do currículo?
+                </div>
+
+                <div class="accordion-body">
+                    Para quem está começando, uma página é suficiente.
+                    Não force duas páginas com conteúdo desnecessário.
+                </div>
+
+            </div>
+
+
+            <!-- Pergunta 4 -->
+            <div class="accordion-item">
+
+                <div class="accordion-header">
+                    Devo salvar o currículo em PDF ou Word?
+                </div>
+
+                <div class="accordion-body">
+                    Sempre envie em PDF. Garante que a formatação seja preservada
+                    em qualquer dispositivo ou sistema operacional.
+                </div>
+
+            </div>
+
+        </div>
 
     </div>
-
-
-    <div class="cur-accordion">
-
-        <!-- Pergunta 1 -->
-        <div class="accordion-item">
-
-            <div class="accordion-header">
-                Posso usar os modelos para qualquer área?
-            </div>
-
-            <div class="accordion-body">
-                Sim! Os modelos são genéricos e funcionam para qualquer área.
-                Você adapta o conteúdo conforme sua formação e habilidades.
-            </div>
-
-        </div>
-
-
-        <!-- Pergunta 2 -->
-        <div class="accordion-item">
-
-            <div class="accordion-header">
-                O currículo precisa ter foto?
-            </div>
-
-            <div class="accordion-body">
-                Não é obrigatório. Em tecnologia, a maioria das empresas não exige foto.
-                Se colocar, use uma foto profissional com fundo neutro.
-            </div>
-
-        </div>
-
-
-        <!-- Pergunta 3 -->
-        <div class="accordion-item">
-
-            <div class="accordion-header">
-                Qual o tamanho ideal do currículo?
-            </div>
-
-            <div class="accordion-body">
-                Para quem está começando, uma página é suficiente.
-                Não force duas páginas com conteúdo desnecessário.
-            </div>
-
-        </div>
-
-
-        <!-- Pergunta 4 -->
-        <div class="accordion-item">
-
-            <div class="accordion-header">
-                Devo salvar o currículo em PDF ou Word?
-            </div>
-
-            <div class="accordion-body">
-                Sempre envie em PDF. Garante que a formatação seja preservada
-                em qualquer dispositivo ou sistema operacional.
-            </div>
-
-        </div>
-
-    </div>
-
-</div>
 
     <!-- FOOTER -->
     <footer class="pt-5 pb-3 border-top">
@@ -779,11 +777,12 @@
             </div>
         </div>
     </footer>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJvWVcXK/BmnVDxM+D2scQbITxI"
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmxc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
+    
+    <script src="script.js"></script>
 
 </body>
 
 </html>
-```
