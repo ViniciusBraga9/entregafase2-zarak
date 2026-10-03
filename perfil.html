@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script type="text/babel" src="script.js" defer></script>
+    <script src="https://unpkg.com/react@17/umd/react.development.js"crossorigin></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <title>Meu Perfil</title>
+</head>
+<body>
+    <!--Navbar-->
+   <nav class="navbar navbar-expand-lg" data-bs-theme="dark">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img src ="img/logo_emprega_se_aqui_30x35.png" alt="Logo" width="30" height="34" class="d-inline-block align-text-top"/>
+          Emprega-se Aqui
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Abrir menu">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="index.html">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="area.html">Sobre Áreas</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="vagas.html">Vagas</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="curriculo.html">Currículos</a>
+            </li>
+
+            <li class = "nav-item">
+              <a class ="nav-link" href="perfil.html">Meu Perfil</a>
+            </li>
+
+            <a class="btn btn-primary" href="empresa.html" role="button">Para Empresas</a>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+       <!-- CONTEÚDO PRINCIPAL -->
+    <div class="container my-5">
+ 
+        <!-- CABEÇALHO DO PERFIL -->
+        <div class="perfil-header mb-4">
+            <div class="perfil-avatar">VA</div>
+            <div class="perfil-header-info">
+                <h1 class="perfil-nome">Vinicius Aglay</h1>
+                <p class="perfil-area">Back-end · Estudante · Campina Grande, PB</p>
+                <div class="perfil-badges">
+                    <p class="perfil-badge">Aberto a estágios</p>
+                    <p class="perfil-badge">Remoto</p>
+                    <p class="perfil-badge">Back-end</p>
+                </div>
+            </div>
+            <button class="btn btn-primary ms-auto" data-bs-toggle="modal" data-bs-target="#modalEditarPerfil">
+                Editar Perfil
+            </button>
+        </div>
+ 
+        <!-- COMPLETUDE DO PERFIL -->
+        <div class="mb-5">
+            <div class="perfil-progress-label">
+                <p>Completude do perfil</p>
+                <p class="perfil-progress-pct">78%</p>
+            </div>
+            <div class="progress" style="height: 8px; border-radius: 50px; background-color: #1c5369;">
+                <div class="progress-bar" role="progressbar" style="width: 78%; background-color: #43d6b0;"
+                    aria-valuenow="78" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+            <p class="perfil-progress-dica">Envie seu currículo para atingir 100% do perfil.</p>
+        </div>
+ 
+        <div class="row g-4">
+            <div class="col-lg-6">
+ 
+                <!-- DADOS PESSOAIS -->
+                <div class="perfil-card mb-4">
+                    <h5 class="perfil-card-titulo">👤 Dados Pessoais</h5>
+                    <ul class="perfil-info-lista">
+                        <li>
+                            <p class="perfil-info-chave">Nome</p>
+                            <p class="perfil-info-valor">Vinicius Aglay</p>
+                        </li>
+                        <li>
+                            <p class="perfil-info-chave">E-mail</p>
+                            <p class="perfil-info-valor">vinicius@email.com</p>
+                        </li>
+                        <li>
+                            <p class="perfil-info-chave">Cidade</p>
+                            <p class="perfil-info-valor">Campina Grande, PB</p>
+                        </li>
+                        <li>
+                            <p class="perfil-info-chave">Curso</p>
+                            <p class="perfil-info-valor">Sistemas de Informação</p>
+                        </li>
+                        <li>
+                            <p class="perfil-info-chave">Nível</p>
+                            <p class="perfil-info-valor">Estudante / Sem experiência</p>
+                        </li>
+                        <li>
+                            <p class="perfil-info-chave">Tipo de vaga</p>
+                            <p class="perfil-info-valor">Estágio</p>
+                        </li>
+                    </ul>
+                </div>
+
+                 <div class="perfil-card mb-4">
+                    <h5 class="perfil-card-titulo">⚡ Minhas Habilidades</h5>
+                    <div class="area-techs">
+                        <p class="tech-tag">JavaScript /node.js</p>
+                        <p class="tech-tag">Java</p>
+                        <p class="tech-tag">SQL</p>
+                        <p class="tech-tag">PostgreSQL</p>
+                        <p class="tech-tag">Git</p>
+                    </div>
+                </div>
+
+                  <div class="perfil-card">
+                    <h5 class="perfil-card-titulo">📄 Currículo Enviado</h5>
+                    <div class="curriculo-box">
+                        <span class="curriculo-icone">📎</span>
+                        <div>
+                            <p class="curriculo-nome">curriculo_vinicius.pdf</p>
+                            <p class="curriculo-data">Enviado em 10/06/2026</p>
+                        </div>
+                        <a href="#" class="btn btn-primary btn-sm ms-auto">Baixar</a>
+                    </div>
+                    <button class="btn btn-primary w-100 mt-3">Enviar novo currículo</button>
+                </div>
+ 
+            </div>
+ 
+            <!-- COLUNA DIREITA -->
+            <div class="col-lg-6">
+ 
+                <!-- RESUMO DE ESTATÍSTICAS -->
+                <div class="row g-3 mb-4">
+                    <div class="col-6">
+                        <div class="perfil-stat-card">
+                            <span class="perfil-stat-icone">💼</span>
+                            <strong class="perfil-stat-num">12</strong>
+                            <span class="perfil-stat-label">Vagas analisadas</span>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="perfil-stat-card">
+                            <span class="perfil-stat-icone">🎯</span>
+                            <strong class="perfil-stat-num">7</strong>
+                            <span class="perfil-stat-label">Vagas compatíveis</span>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="perfil-stat-card">
+                            <span class="perfil-stat-icone">📊</span>
+                            <strong class="perfil-stat-num">72%</strong>
+                            <span class="perfil-stat-label">Compatibilidade média</span>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="perfil-stat-card">
+                            <span class="perfil-stat-icone">⚡</span>
+                            <strong class="perfil-stat-num">8</strong>
+                            <span class="perfil-stat-label">Habilidades cadastradas</span>
+                        </div>
+                    </div>
+                </div>
+ 
+                <!-- VAGAS COMPATÍVEIS -->
+                <div class="perfil-card">
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <h5 class="perfil-card-titulo mb-0">🔎 Vagas Compatíveis</h5>
+                        <a href="vagas.html" class="area-link">Ver todas →</a>
+                    </div>
+ 
+                    <div class="vaga-item">
+                        <div class="vaga-item-logo logo-azul">TS</div>
+                        <div class="vaga-item-info">
+                            <p class="vaga-item-titulo">Dev Back-end Júnior</p>
+                            <p class="vaga-item-empresa">Tech Solutions · Remoto</p>
+                        </div>
+                        <span class="vaga-item-compat compat-alta">75%</span>
+                    </div>
+ 
+                    <div class="vaga-item">
+                        <div class="vaga-item-logo logo-roxo">IH</div>
+                        <div class="vaga-item-info">
+                            <p class="vaga-item-titulo">Dev Java Júnior</p>
+                            <p class="vaga-item-empresa">Inova Hub · Recife</p>
+                        </div>
+                        <span class="vaga-item-compat compat-alta">80%</span>
+                    </div>
+ 
+                    <div class="vaga-item">
+                        <div class="vaga-item-logo logo-verde">DG</div>
+                        <div class="vaga-item-info">
+                            <p class="vaga-item-titulo">Estagiário Back-end</p>
+                            <p class="vaga-item-empresa">DataGrid · Remoto</p>
+                        </div>
+                        <span class="vaga-item-compat compat-media">55%</span>
+                    </div>
+ 
+                    <div class="vaga-item">
+                        <div class="vaga-item-logo logo-laranja">NS</div>
+                        <div class="vaga-item-info">
+                            <p class="vaga-item-titulo">Dev Node.js Júnior</p>
+                            <p class="vaga-item-empresa">NexStack · Remoto</p>
+                        </div>
+                        <span class="vaga-item-compat compat-media">60%</span>
+                    </div>
+ 
+                </div>
+ 
+            </div>
+        </div>
+    </div>
+ 
+    <!-- MODAL EDITAR PERFIL -->
+    <div class="modal fade" id="modalEditarPerfil" tabindex="-1" aria-labelledby="modalEditarPerfilLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-scrollable">
+            <div class="modal-content perfil-modal">
+ 
+                <div class="modal-header perfil-modal-header">
+                    <h5 class="modal-title" id="modalEditarPerfilLabel">✏️ Editar Perfil</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                        aria-label="Fechar"></button>
+                </div>
+ 
+                <div class="modal-body">
+ 
+                    <!-- Dados pessoais -->
+                    <p class="modal-secao-titulo">👤 Dados Pessoais</p>
+                    <div class="row g-3 mb-4">
+                        <div class="col-md-6">
+                            <label class="form-label">Nome completo</label>
+                            <input type="text" class="form-control" value="Vinicius Santos">
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label">E-mail</label>
+                            <input type="email" class="form-control" value="vinicius@email.com">
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label">Cidade</label>
+                            <input type="text" class="form-control" value="Campina Grande, PB">
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label">Telefone</label>
+                            <input type="text" class="form-control" placeholder="(00) 00000-0000">
+                        </div>
+                    </div>
+ 
+                    <!-- Formação -->
+                    <p class="modal-secao-titulo">🎓 Formação</p>
+                    <div class="row g-3 mb-4">
+                        <div class="col-md-6">
+                            <label class="form-label">Curso</label>
+                            <input type="text" class="form-control" value="Sistemas de Informação">
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label">Instituição</label>
+                            <input type="text" class="form-control" placeholder="Nome da universidade">
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label">Nível</label>
+                            <select class="form-select">
+                                <option selected>Graduação cursando</option>
+                                <option>Graduação completa</option>
+                                <option>Técnico</option>
+                                <option>Pós-graduação</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label">Tipo de vaga desejada</label>
+                            <select class="form-select">
+                                <option selected>Estágio</option>
+                                <option>CLT Júnior</option>
+                                <option>Freelance</option>
+                                <option>PJ</option>
+                            </select>
+                        </div>
+                    </div>
+ 
+                    <!-- Habilidades -->
+                    <p class="modal-secao-titulo">⚡ Habilidades</p>
+                    <div class="modal-chips mb-2">
+                        <span class="modal-chip selecionado">HTML</span>
+                        <span class="modal-chip selecionado">CSS</span>
+                        <span class="modal-chip selecionado">JavaScript</span>
+                        <span class="modal-chip">React</span>
+                        <span class="modal-chip">Node.js</span>
+                        <span class="modal-chip selecionado">Java</span>
+                        <span class="modal-chip">Spring Boot</span>
+                        <span class="modal-chip">Python</span>
+                        <span class="modal-chip selecionado">SQL</span>
+                        <span class="modal-chip selecionado">PostgreSQL</span>
+                        <span class="modal-chip selecionado">Git</span>
+                        <span class="modal-chip">Docker</span>
+                        <span class="modal-chip selecionado">Bootstrap</span>
+                        <span class="modal-chip">TypeScript</span>
+                        <span class="modal-chip">MySQL</span>
+                    </div>
+ 
+                </div>
+ 
+                <div class="modal-footer perfil-modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-primary">Salvar alterações</button>
+                </div>
+ 
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="pt-5 pb-3 border-top">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3 mb-4">
+            <h5 class="fw-bold mb-3">Emprega-se aqui</h5>
+            <p class="text-muted small">
+              Conectamos talentos em início de carreira às melhores
+              oportunidades do mercado, com análise inteligente de
+              compatibilidade de perfil.
+            </p>
+          </div>
+
+          <div class="col-md-2 mb-4">
+            <h5 class="fw-bold mb-3">Empresa</h5>
+            <ul class="list-unstyled small">
+              <li class="mb-2">
+                <a href="#" class="text-decoration-none text-secondary"
+                  >Sobre nós</a
+                >
+              </li>
+              <li class="mb-2">
+                <a href="empresa.html" class="text-decoration-none text-secondary"
+                  >Para empresas</a
+                >
+              </li>
+              <li class="mb-2">
+                <a href="" class="text-decoration-none text-secondary"
+                  >Criar currículo</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div class="col-md-2 mb-4">
+            <h5 class="fw-bold mb-3">Navegue</h5>
+            <ul class="list-unstyled small">
+              <li class="mb-2">
+                <a href="index.html" class="text-decoration-none text-secondary"
+                  >Início</a
+                >
+              </li>
+              <li class="mb-2">
+                <a href="area.html" class="text-decoration-none text-secondary"
+                  >Vagas</a
+                >
+              </li>
+              <li class="mb-2">
+                <a href="vagas.html"class=" text-decoration-none text-secondary"
+                  >Vagas</a
+                >
+              </li>
+
+              <li class ="mb-2">
+                <a href="curriculo.html"class=" text-decoration-none text-secondary">
+                  Curriculo
+                </a>
+              </li>
+
+              <li class = "mb-2">
+                <a href="perfil.html" class=" text-decoration-none text-secondary">
+                  Meu Perfil
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="col-md-2 mb-4">
+            <h5 class="fw-bold mb-3">Contato</h5>
+            <p class="small text-muted mb-1">(83) 91234-5678</p>
+            <p class="small text-muted">contato@emprega-se.com</p>
+          </div>
+
+          <div class="col-md-3 mb-4">
+            <h5 class="fw-bold mb-3">Redes Sociais</h5>
+            <ul class="list-unstyled small">
+              <li class="mb-2">
+                <a href="#" class="text-decoration-none text-secondary"
+                  >Instagram - Emprega-se Aqui</a
+                >
+              </li>
+              <li class="mb-2">
+                <a href="#" class="text-decoration-none text-secondary"
+                  >X - Emprega-se Aqui</a
+                >
+              </li>
+              <li class="mb-2">
+                <a href="#" class="text-decoration-none text-secondary"
+                  >TikTok - Emprega-se Aqui</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <hr class="my-4" />
+
+        <div class="text-center">
+          <p class="text-muted small mb-0">
+            &copy; 2026 Emprega-se Aqui. Todos os direitos reservados.
+          </p>
+        </div>
+
+        <div class="desenvolvedores">
+          <h6>Desenvolvedores</h6>
+          <p>
+            Vinicius Aglay <br />
+            Pedro Nunes <br />
+            Thiago Carvalho <br />
+            Murilo Lira <br />
+            Gabriel Farias <br />
+            Raimundo Neto <br />
+            João Lucas
+          </p>
+        </div>
+      </div>
+    </footer>
+
+</body>
+</html>
