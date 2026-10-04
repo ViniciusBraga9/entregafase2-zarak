@@ -4,25 +4,174 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Empresa — Emprega-se Aqui</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="styles.css">
-    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin defer></script>
-    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin defer></script>
-    <script src="script.js" defer></script>
+    
+    
+    
 </head>
 <body>
-    <nav class="navbar" data-bs-theme="dark">
-        <div class="container">
-            <a class="navbar-brand" href="index.html">
-                <img src="logo_emprega_se_aqui_30x35.png" alt="Logo Emprega-se Aqui" width="30" height="35" class="d-inline-block align-text-top">
-                Emprega-se Aqui
-            </a>
-            <a href="index.html">Início</a>
+    <nav class="navbar navbar-expand-lg" data-bs-theme="dark">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img src="logo_emprega_se_aqui_30x35.png" alt="Logo Emprega-se Aqui" width="30" height="35">
+          Emprega-se Aqui
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Abrir menu">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav align-items-lg-center">
+            <li class="nav-item"><a class="nav-link" href="index.html">Início</a></li>
+            <li class="nav-item"><a class="nav-link" href="area.html">Áreas</a></li>
+            <li class="nav-item"><a class="nav-link" href="vagas.html">Vagas</a></li>
+            <li class="nav-item"><a class="nav-link" href="curriculo.html">Currículos</a></li>
+            <li class="nav-item"><a class="nav-link" href="perfil.html">Meu Perfil</a></li>
+            <li class="nav-item"><a class="btn btn-primary acesso-empresa" aria-current="page" href="empresa.html">Entrar/Cadastrar</a></li>
+          </ul>
         </div>
+      </div>
     </nav>
-    <main class="container">
-        <div id="dados-empresa"></div>
+    <main class="container my-5">
+        <p>Área da empresa — demonstração com a UNIEAT. O login real ainda não foi implementado.</p>
+        <div id="dados-empresa"><p>Carregando os dados da empresa...</p></div>
         <noscript>Ative o JavaScript para visualizar os dados da empresa.</noscript>
+
+        <section id="nova-vaga" class="empresa-card mt-4">
+            <h2>Abrir vaga de emprego</h2>
+            <p>As vagas cadastradas nesta demonstração ficam somente neste navegador.</p>
+            <form id="formVaga">
+                <div class="row g-3">
+                    <div class="col-md-6">
+                        <label class="form-label" for="vagaTitulo">Título da vaga</label>
+                        <input class="form-control" id="vagaTitulo" required maxlength="100">
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label" for="vagaCidade">Cidade</label>
+                        <input class="form-control" id="vagaCidade" value="Campina Grande — PB" required maxlength="80">
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label" for="vagaArea">Área</label>
+                        <select class="form-select" id="vagaArea"><option>Front-end</option><option>Back-end</option><option>Full-Stack</option><option>Dados</option><option>IA</option><option>Segurança</option><option>Design</option><option>Mobile</option></select>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label" for="vagaModalidade">Modalidade</label>
+                        <select class="form-select" id="vagaModalidade"><option>Presencial</option><option>Híbrido</option><option>Remoto</option></select>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label" for="vagaNivel">Nível</label>
+                        <select class="form-select" id="vagaNivel"><option>Estágio</option><option>Júnior</option><option>Pleno</option><option>Sênior</option></select>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label" for="vagaSalario">Salário (R$)</label>
+                        <input class="form-control" id="vagaSalario" type="number" min="0" step="0.01" placeholder="Opcional">
+                    </div>
+                    <div class="col-12">
+                        <label class="form-label" for="vagaDescricao">Descrição e habilidades</label>
+                        <textarea class="form-control" id="vagaDescricao" rows="3" required maxlength="1000"></textarea>
+                    </div>
+                </div>
+                <button class="btn btn-primary mt-3" type="submit">Salvar vaga</button>
+                <a class="btn btn-secondary mt-3" href="vagas.html">Ver vagas</a>
+                <p id="avisoVaga" class="mt-3" role="status"></p>
+            </form>
+        </section>
     </main>
+    <footer class="pt-5 pb-3 border-top">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3 mb-4">
+            <h5 class="fw-bold mb-3">Emprega-se aqui</h5>
+            <p class="text-muted small">
+              Conectamos talentos em início de carreira a oportunidades do mercado.
+              Consulte vagas, conheça áreas e prepare seu currículo.
+            </p>
+          </div>
+
+          <div class="col-md-2 mb-4">
+            <h5 class="fw-bold mb-3">Empresa</h5>
+            <ul class="list-unstyled small">
+              <li class="mb-2">
+                <a href="index.html#sobre-nos" class="text-decoration-none text-secondary"
+                  >Sobre nós</a>
+              </li>
+              <li class="mb-2">
+                <a href="empresa.html" class="text-decoration-none text-secondary"
+                  >Para empresas</a>
+              </li>
+              <li class="mb-2">
+                <a href="curriculo.html" class="text-decoration-none text-secondary"
+                  >Criar currículo</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="col-md-2 mb-4">
+            <h5 class="fw-bold mb-3">Navegue</h5>
+            <ul class="list-unstyled small">
+              <li class="mb-2">
+                <a href="index.html" class="text-decoration-none text-secondary"
+                  >Início</a>
+              </li>
+              <li class="mb-2">
+                <a href="vagas.html" class="text-decoration-none text-secondary"
+                  >Vagas</a>
+              </li>
+              <li class="mb-2">
+                <a href="curriculo.html" class="text-decoration-none text-secondary"
+                  >Currículos</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="col-md-2 mb-4">
+            <h5 class="fw-bold mb-3">Contato</h5>
+            <p class="small text-muted mb-1">(83) 91234-5678</p>
+            <p class="small text-muted">contato@emprega-se.com</p>
+          </div>
+
+          <div class="col-md-3 mb-4">
+            <h5 class="fw-bold mb-3">Redes Sociais</h5>
+            <ul class="list-unstyled small">
+              <li class="mb-2">
+                <span class="text-secondary">Instagram - Emprega-se Aqui (em breve)</span>
+              </li>
+              <li class="mb-2">
+                <span class="text-secondary">X - Emprega-se Aqui (em breve)</span>
+              </li>
+              <li class="mb-2">
+                <span class="text-secondary">TikTok - Emprega-se Aqui (em breve)</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <hr class="my-4" />
+
+        <div class="text-center">
+          <p class="text-muted small mb-0">
+            &copy; 2026 Emprega-se Aqui. Todos os direitos reservados.
+          </p>
+        </div>
+
+        <div class="desenvolvedores">
+          <h6>Desenvolvedores</h6>
+          <p>
+            Vinicius Aglay <br />
+            Pedro Nunes <br />
+            Thiago Carvalho <br />
+            Murilo Lira <br />
+            Gabriel Farias <br />
+            Raimundo Neto <br />
+            João Lucas
+          </p>
+        </div>
+      </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/react@17.0.2/umd/react.production.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

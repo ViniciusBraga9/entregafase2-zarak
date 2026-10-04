@@ -733,7 +733,6 @@ button:focus-visible {
     font-weight: 600;
     cursor: pointer;
     transition: border-color 0.2s, color 0.2s;
-    display: none;
 }
 
 .btn-ghost:hover {
@@ -1593,440 +1592,8 @@ button:focus-visible {
 }
 
 
-empresa-nav-nome {
-    font-size: 14px;
-    font-weight: 600;
-    color: #d4e3e9;
-}
- 
-.empresa-nav-avatar {
-    width: 34px;
-    height: 34px;
-    border-radius: 8px;
-    background-color: #43d6b0;
-    color: #092a3a;
-    font-size: 13px;
-    font-weight: 800;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
- 
- 
-/*  CABEÇALHO DA EMPRESA  */
- 
-.empresa-header {
-    display: flex;
-    align-items: center;
-    gap: 24px;
-    flex-wrap: wrap;
-}
- 
-.empresa-avatar-grande {
-    width: 72px;
-    height: 72px;
-    border-radius: 16px;
-    background-color: #43d6b0;
-    color: #092a3a;
-    font-size: 26px;
-    font-weight: 800;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-}
- 
-.empresa-nome {
-    font-size: 24px;
-    font-weight: 800;
-    color: #f4f8fa;
-    margin-bottom: 4px;
-}
- 
-.empresa-descricao {
-    font-size: 14px;
-    color: #b8ced8;
-    margin-bottom: 16px;
-}
- 
-.empresa-stats-row {
-    display: flex;
-    gap: 28px;
-    flex-wrap: wrap;
-}
- 
-.empresa-stat {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 2px;
-}
- 
-.empresa-stat strong {
-    font-size: 22px;
-    font-weight: 800;
-    color: #43d6b0;
-    line-height: 1;
-}
- 
-.empresa-stat span {
-    font-size: 12px;
-    color: #b8ced8;
-}
- 
- 
-/*  ABAS DE VAGAS  */
- 
-.empresa-abas {
-    display: flex;
-    gap: 8px;
-    flex-wrap: wrap;
-    border-bottom: 2px solid #365d70;
-    padding-bottom: 0;
-}
- 
-.empresa-aba {
-    background: transparent;
-    border: none;
-    color: #b8ced8;
-    font-size: 14px;
-    font-weight: 600;
-    padding: 10px 18px;
-    cursor: pointer;
-    border-bottom: 3px solid transparent;
-    margin-bottom: -2px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    transition: color 0.15s;
-}
- 
-.empresa-aba:hover {
-    color: #f4f8fa;
-}
- 
-.empresa-aba.ativa {
-    color: #43d6b0;
-    border-bottom-color: #43d6b0;
-}
- 
-.aba-badge {
-    background-color: #1c5369;
-    color: #b8ced8;
-    font-size: 11px;
-    font-weight: 700;
-    padding: 2px 8px;
-    border-radius: 50px;
-}
- 
-.empresa-aba.ativa .aba-badge {
-    background-color: rgba(67, 214, 176, 0.15);
-    color: #43d6b0;
-}
- 
- 
-/*  LAYOUT PRINCIPAL  */
- 
-.empresa-layout {
-    display: grid;
-    grid-template-columns: 320px 1fr;
-    gap: 24px;
-    align-items: start;
-} 
 
-/*  LISTA DE CANDIDATOS  */
- 
-.candidatos-filtros {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px;
-}
- 
-.candidato-card {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    background-color: #16485e;
-    border: 1.5px solid #365d70;
-    border-radius: 8px;
-    padding: 14px;
-    cursor: pointer;
-    transition: border-color 0.15s, background 0.15s;
-    margin-bottom: 8px;
-}
- 
-.candidato-card:hover {
-    border-color: #527b8e;
-    background-color: #1c5369;
-}
- 
-.candidato-card.selecionado {
-    border-color: #43d6b0;
-    background-color: #1c5369;
-}
- 
-.cand-avatar {
-    width: 40px;
-    height: 40px;
-    border-radius: 10px;
-    font-size: 14px;
-    font-weight: 800;
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-}
- 
-.cand-avatar.grande {
-    width: 56px;
-    height: 56px;
-    border-radius: 14px;
-    font-size: 20px;
-}
- 
-.cand-info {
-    flex: 1;
-    min-width: 0;
-}
- 
-.cand-nome {
-    font-size: 14px;
-    font-weight: 700;
-    color: #f4f8fa;
-    margin-bottom: 2px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
- 
-.cand-sub {
-    font-size: 12px;
-    color: #b8ced8;
-    margin-bottom: 0;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
- 
-.cand-lado {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    gap: 5px;
-    flex-shrink: 0;
-}
- 
-.cand-compat {
-    font-size: 14px;
-    font-weight: 800;
-}
- 
-.cand-compat.alta   { color: #43d6b0; }
-.cand-compat.media  { color: #f5820a; }
-.cand-compat.baixa  { color: #e05252; }
- 
-.cand-status {
-    font-size: 11px;
-    font-weight: 700;
-    padding: 3px 9px;
-    border-radius: 50px;
-}
- 
-.cand-status.analise  { background-color: rgba(245,130,10,.15); color: #f5820a; }
-.cand-status.aprovado { background-color: rgba(67,214,176,.15); color: #43d6b0; }
-.cand-status.reprovado { background-color: rgba(224,82,82,.15); color: #e05252; }
- 
- 
-/*  PAINEL DE ANÁLISE  */
- 
-.analise-painel {
-    display: flex;
-    flex-direction: column;
-    gap: 0;
-}
- 
-.analise-header {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    margin-bottom: 20px;
-    flex-wrap: wrap;
-}
- 
-.analise-nome {
-    font-size: 20px;
-    font-weight: 800;
-    color: #f4f8fa;
-    margin-bottom: 4px;
-}
- 
-.analise-sub {
-    font-size: 13px;
-    color: #b8ced8;
-    margin-bottom: 0;
-}
- 
-.analise-card {
-    background-color: #16485e;
-    border: 1px solid #365d70;
-    border-radius: 8px;
-    padding: 22px;
-    margin-bottom: 16px;
-}
- 
-.analise-card-titulo {
-    font-size: 15px;
-    font-weight: 700;
-    color: #f4f8fa;
-    margin-bottom: 16px;
-}
- 
-.analise-label {
-    font-size: 12px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-    color: #b8ced8;
-    margin-bottom: 10px;
-}
-
-/*  COMPATIBILIDADE  */
- 
-.compat-grande {
-    margin-bottom: 20px;
-}
- 
-.compat-numero-grande {
-    font-size: 36px;
-    font-weight: 800;
-    color: #43d6b0;
-    line-height: 1;
-    margin-bottom: 10px;
-}
- 
-.compat-barra-wrap {
-    background-color: #0d3447;
-    border-radius: 50px;
-    height: 10px;
-    margin-bottom: 8px;
-    overflow: hidden;
-}
- 
-.compat-barra {
-    height: 100%;
-    border-radius: 50px;
-    transition: width 0.4s;
-}
- 
-.compat-desc {
-    font-size: 13px;
-    color: #b8ced8;
-    margin-bottom: 0;
-}
- 
- 
-/*  REQUISITOS  */
- 
-.requisitos-lista {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
- 
-.requisito {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 10px 14px;
-    border-radius: 8px;
-    font-size: 14px;
-    font-weight: 600;
-}
- 
-.requisito.tem    { background-color: rgba(67,214,176,.1); color: #43d6b0; }
-.requisito.nao-tem { background-color: rgba(255,255,255,.04); color: #b8ced8; }
- 
-.req-icone { font-size: 15px; }
-.req-nome  { flex: 1; }
-.req-status {
-    font-size: 12px;
-    font-weight: 500;
-    opacity: 0.75;
-}
- 
- 
-/*  FEEDBACK  */
- 
-.feedback-cols {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
-}
- 
-.feedback-grupo {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
- 
-.feedback-label {
-    font-size: 13px;
-    font-weight: 700;
-    display: block;
-}
- 
-.feedback-label.positivo { color: #43d6b0; }
-.feedback-label.negativo { color: #e05252; }
-.feedback-label.neutro   { color: #b8ced8; }
- 
- 
-/*  PARECER FINAL  */
- 
-.analise-parecer-desc {
-    font-size: 14px;
-    color: #b8ced8;
-    margin-bottom: 16px;
-}
- 
-.parecer-botoes {
-    display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
-    margin-bottom: 14px;
-}
- 
-.btn-parecer {
-    flex: 1;
-    min-width: 140px;
-    padding: 11px 16px;
-    border-radius: 8px;
-    font-size: 13px;
-    font-weight: 700;
-    border: 2px solid transparent;
-    cursor: pointer;
-    transition: all 0.15s;
-    background-color: #0d3447;
-    color: #b8ced8;
-    border-color: #365d70;
-}
- 
-.btn-parecer:hover { border-color: #527b8e; color: #f4f8fa; }
- 
-.btn-parecer.aprovar.ativo  { background-color: rgba(67,214,176,.15); border-color: #43d6b0; color: #43d6b0; }
-.btn-parecer.reprovar.ativo { background-color: rgba(224,82,82,.15);  border-color: #e05252; color: #e05252; }
-.btn-parecer.pendente.ativo { background-color: rgba(245,130,10,.15); border-color: #f5820a; color: #f5820a; }
- 
-.parecer-aviso {
-    font-size: 14px;
-    font-weight: 600;
-    padding: 10px 14px;
-    background-color: #0d3447;
-    border-radius: 8px;
-    border: 1px solid #365d70;
-}
- 
- /*curriculo css*/
+/*curriculo css*/
 
  .cur-hero {
     background-color: #092a3a;
@@ -2085,7 +1652,8 @@ empresa-nav-nome {
 /* ===== COMO USAR ===== */
  
 .cur-como-usar {
-    padding: 64px 0;
+    padding-top: 64px;
+    padding-bottom: 64px;
 }
  
 .cur-secao-titulo {
@@ -2361,6 +1929,10 @@ empresa-nav-nome {
 }
  
 .cur-accordion .accordion-header {
+    width: 100%;
+    border: 0;
+    background: transparent;
+    text-align: left;
     font-size: 14px;
     font-weight: 600;
     color: #f4f8fa;
@@ -2409,7 +1981,7 @@ empresa-nav-nome {
 }
  
 .cur-accordion .accordion-item.aberto .accordion-body {
-    max-height: 200px;
+    max-height: none;
     padding: 0 20px 16px;
 }
 
@@ -2463,4 +2035,51 @@ footer hr {
     text-align: center;
     margin-top: 28px;
     font-size: 13px;
+}
+
+/* Ajustes das páginas */
+body {
+    --bs-secondary-color: #b8ced8;
+    --bs-secondary-rgb: 184, 206, 216;
+}
+
+[hidden] { display: none !important; }
+
+.empresa-card, .detalhes-vaga {
+    background-color: #16485e;
+    color: #d4e3e9;
+    border: 1px solid #365d70;
+    border-radius: 8px;
+    padding: 24px;
+}
+
+.empresa-card dd { margin-bottom: 14px; }
+.empresa-card dt { color: #43d6b0; }
+.empresa-card .form-select { background-color: #0d3447; color: #f4f8fa; }
+.detalhes-vaga { width: min(620px, 92vw); max-height: 85vh; }
+.detalhes-vaga::backdrop { background: rgba(0, 0, 0, 0.6); }
+.detalhes-vaga p { overflow-wrap: anywhere; white-space: pre-line; }
+.vaga-card { cursor: pointer; }
+.vagas-resultados, .vaga-info { min-width: 0; }
+.vaga-titulo-card, .perfil-info-valor { overflow-wrap: anywhere; }
+#filtroToggle { display: none; }
+#novosComentarios .card { margin-bottom: 12px; }
+
+@media (max-width: 991.98px) {
+    .navbar-nav { gap: 6px; padding-top: 12px; }
+    .navbar .acesso-empresa { margin-bottom: 8px; }
+}
+
+@media (max-width: 767.98px) {
+    .vagas-filtros { display: none; }
+    .vagas-filtros.aberto { display: grid; }
+    #filtroToggle { display: inline-block; }
+    .resultados-barra, .perfil-header { flex-wrap: wrap; }
+    .vaga-card { grid-template-columns: auto minmax(0, 1fr); }
+    .perfil-header-info { min-width: 0; }
+    .vaga-lado { grid-column: 2; align-items: flex-start; white-space: normal; }
+    .perfil-info-lista li { flex-wrap: wrap; gap: 4px; }
+    .perfil-info-valor { text-align: left; }
+    .vaga-item { flex-wrap: wrap; }
+    .navbar-brand { font-size: 16px; }
 }

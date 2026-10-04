@@ -7,9 +7,7 @@
 
     <title>Vagas — Emprega-se Aqui</title>
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
-        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
 
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -19,25 +17,21 @@
     <nav class="navbar navbar-expand-lg" data-bs-theme="dark">
       <div class="container">
         <a class="navbar-brand" href="index.html">
-          <img src="logo_emprega_se_aqui_30x35.png" alt="Logo" width="30" height="34" class="d-inline-block align-text-top"/>
+          <img src="logo_emprega_se_aqui_30x35.png" alt="Logo Emprega-se Aqui" width="30" height="35">
           Emprega-se Aqui
         </a>
-        <a class="btn btn-primary acesso-empresa" href="empresa.html" target="_blank" rel="noopener noreferrer">Entrar/Cadastrar</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-            aria-controls="navbarNav" aria-expanded="false" aria-label="Abrir menu">
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Abrir menu">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link" href="index.html">Início</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="vagas.html">Vagas</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="curriculo.html">Currículos</a>
-            </li>
+          <ul class="navbar-nav align-items-lg-center">
+            <li class="nav-item"><a class="nav-link" href="index.html">Início</a></li>
+            <li class="nav-item"><a class="nav-link" href="area.html">Áreas</a></li>
+            <li class="nav-item"><a class="nav-link active" aria-current="page" href="vagas.html">Vagas</a></li>
+            <li class="nav-item"><a class="nav-link" href="curriculo.html">Currículos</a></li>
+            <li class="nav-item"><a class="nav-link" href="perfil.html">Meu Perfil</a></li>
+            <li class="nav-item"><a class="btn btn-primary acesso-empresa" href="empresa.html">Entrar/Cadastrar</a></li>
           </ul>
         </div>
       </div>
@@ -47,6 +41,7 @@
     <div class="vagas-hero">
         <div class="container">
             <p class="vagas-rotulo">Oportunidades abertas</p>
+            <p class="small">As oito vagas iniciais são exemplos para apresentação.</p>
             <h1 class="vagas-titulo">Encontre a vaga certa para você</h1>
             <p class="vagas-subtitulo">
                 Explore vagas nas principais áreas de tecnologia, filtre por nível, modalidade
@@ -61,7 +56,7 @@
                             <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.099zm-5.242 1.656a5.5 5.5 0 1 1 0-11 5.5 5.5 0 0 1 0 11z"/>
                         </svg>
                     </span>
-                    <input type="search" id="buscaInput" class="form-control border-start-0" placeholder="Busque por cargo, empresa ou tecnologia...">
+                    <input type="search" id="buscaInput" aria-label="Buscar vagas" class="form-control border-start-0" placeholder="Busque por cargo, empresa ou tecnologia...">
                     <button class="btn btn-primary" type="button" id="buscaBtn">Buscar</button>
                 </div>
             </div>
@@ -90,7 +85,7 @@
                 </div>
 
                 <div class="filtro-grupo">
-                    <label class="filtro-label" for="filtroArea">Área</label>
+                    <p class="filtro-label">Área</p>
                     <div class="filtro-chips" id="filtroAreaChips">
                         <button class="filtro-chip" data-tipo="area" data-valor="Front-end">Front-end</button>
                         <button class="filtro-chip" data-tipo="area" data-valor="Back-end">Back-end</button>
@@ -106,19 +101,19 @@
                 <div class="filtro-grupo">
                     <p class="filtro-label">Modalidade</p>
                     <div class="filtro-checks">
-                        <label><input type="checkbox" value="Remoto"> Remoto</label>
-                        <label><input type="checkbox" value="Híbrido"> Híbrido</label>
-                        <label><input type="checkbox" value="Presencial"> Presencial</label>
+                        <label><input type="checkbox" name="modalidade" value="Remoto"> Remoto</label>
+                        <label><input type="checkbox" name="modalidade" value="Híbrido"> Híbrido</label>
+                        <label><input type="checkbox" name="modalidade" value="Presencial"> Presencial</label>
                     </div>
                 </div>
 
                 <div class="filtro-grupo">
                     <p class="filtro-label">Nível</p>
                     <div class="filtro-checks">
-                        <label><input type="checkbox" value="Estágio"> Estágio</label>
-                        <label><input type="checkbox" value="Júnior"> Júnior</label>
-                        <label><input type="checkbox" value="Pleno"> Pleno</label>
-                        <label><input type="checkbox" value="Sênior"> Sênior</label>
+                        <label><input type="checkbox" name="nivel" value="Estágio"> Estágio</label>
+                        <label><input type="checkbox" name="nivel" value="Júnior"> Júnior</label>
+                        <label><input type="checkbox" name="nivel" value="Pleno"> Pleno</label>
+                        <label><input type="checkbox" name="nivel" value="Sênior"> Sênior</label>
                     </div>
                 </div>
 
@@ -140,20 +135,20 @@
             <div class="vagas-resultados">
 
                 <div class="resultados-barra">
-                    <p class="resultados-contagem" id="contagem"><b>22</b> vagas encontradas</p>
+                    <p class="resultados-contagem" id="contagem" aria-live="polite"><b>8</b> vagas encontradas</p>
                     <div class="resultados-acoes">
-                        <button class="btn btn-ghost btn-sm" id="filtroToggle" type="button">Filtros</button>
-                        <select class="filtro-select" id="ordenar">
+                        <button class="btn btn-ghost btn-sm" id="filtroToggle" aria-controls="filtrosAside" aria-expanded="false" type="button">Filtros</button>
+                        <select class="filtro-select" id="ordenar" aria-label="Ordenar vagas">
                             <option value="recente">Mais recentes</option>
                             <option value="salario">Maior salário</option>
-                            <option value="compatibilidade">Mais compatíveis</option>
+                            
                         </select>
                     </div>
                 </div>
 
                 <ul class="lista-vagas" id="listaVagas">
 
-                    <li class="vaga-card" tabindex="0">
+                    <li class="vaga-card" tabindex="0" role="button" aria-label="Ver detalhes da vaga" data-area="Front-end" data-salario="3600" data-dias="0">
                         <div class="vaga-logo" style="--c:#1f6c91">NV</div>
                         <div class="vaga-info">
                             <h5 class="vaga-titulo-card">Desenvolvedor(a) Front-end Jr.</h5>
@@ -177,7 +172,7 @@
                         </div>
                     </li>
 
-                    <li class="vaga-card" tabindex="0">
+                    <li class="vaga-card" tabindex="0" role="button" aria-label="Ver detalhes da vaga" data-area="Front-end" data-salario="1200" data-dias="1">
                         <div class="vaga-logo" style="--c:#123b52">BT</div>
                         <div class="vaga-info">
                             <h5 class="vaga-titulo-card">Estágio em Desenvolvimento Web</h5>
@@ -199,7 +194,7 @@
                         </div>
                     </li>
 
-                    <li class="vaga-card" tabindex="0">
+                    <li class="vaga-card" tabindex="0" role="button" aria-label="Ver detalhes da vaga" data-area="Dados" data-salario="4200" data-dias="3">
                         <div class="vaga-logo" style="--c:#20b486">MA</div>
                         <div class="vaga-info">
                             <h5 class="vaga-titulo-card">Analista de Dados Jr.</h5>
@@ -222,7 +217,7 @@
                         </div>
                     </li>
 
-                    <li class="vaga-card" tabindex="0">
+                    <li class="vaga-card" tabindex="0" role="button" aria-label="Ver detalhes da vaga" data-area="Back-end" data-salario="4500" data-dias="4">
                         <div class="vaga-logo" style="--c:#3a5a8c">SC</div>
                         <div class="vaga-info">
                             <h5 class="vaga-titulo-card">Desenvolvedor(a) Back-end Node.js</h5>
@@ -245,7 +240,7 @@
                         </div>
                     </li>
 
-                    <li class="vaga-card" tabindex="0">
+                    <li class="vaga-card" tabindex="0" role="button" aria-label="Ver detalhes da vaga" data-area="Dados" data-salario="1800" data-dias="1">
                         <div class="vaga-logo" style="--c:#7a4bb5">AL</div>
                         <div class="vaga-info">
                             <h5 class="vaga-titulo-card">Estágio em Ciência de Dados</h5>
@@ -268,7 +263,7 @@
                         </div>
                     </li>
 
-                    <li class="vaga-card" tabindex="0">
+                    <li class="vaga-card" tabindex="0" role="button" aria-label="Ver detalhes da vaga" data-area="Segurança" data-salario="4800" data-dias="5">
                         <div class="vaga-logo" style="--c:#c2553d">ED</div>
                         <div class="vaga-info">
                             <h5 class="vaga-titulo-card">Analista de Segurança da Informação Jr.</h5>
@@ -290,7 +285,7 @@
                         </div>
                     </li>
 
-                    <li class="vaga-card" tabindex="0">
+                    <li class="vaga-card" tabindex="0" role="button" aria-label="Ver detalhes da vaga" data-area="Design" data-salario="3400" data-dias="6">
                         <div class="vaga-logo" style="--c:#d08a1c">CS</div>
                         <div class="vaga-info">
                             <h5 class="vaga-titulo-card">UI Designer Jr.</h5>
@@ -312,7 +307,7 @@
                         </div>
                     </li>
 
-                    <li class="vaga-card" tabindex="0">
+                    <li class="vaga-card" tabindex="0" role="button" aria-label="Ver detalhes da vaga" data-area="Mobile" data-salario="4300" data-dias="2">
                         <div class="vaga-logo" style="--c:#2a8a9e">RA</div>
                         <div class="vaga-info">
                             <h5 class="vaga-titulo-card">Desenvolvedor(a) Mobile React Native</h5>
@@ -337,6 +332,7 @@
 
                 </ul>
 
+                <p id="semVagas" hidden>Nenhuma vaga encontrada. Tente outro filtro.</p>
                 <div class="ver-mais-wrap">
                     <button class="btn btn-ghost" type="button" id="verMaisBtn">Ver mais vagas</button>
                 </div>
@@ -349,10 +345,21 @@
     <div class="vagas-cta">
         <div class="container">
             <h2>Seu próximo emprego começa aqui.</h2>
-            <p>Crie seu currículo e apareça para as empresas certas.</p>
+            <p>Prepare seu currículo e consulte as oportunidades disponíveis.</p>
             <a href="curriculo.html" class="btn btn-primary">Criar meu currículo</a>
         </div>
     </div>
+
+    <dialog id="detalhesVaga" class="detalhes-vaga" aria-labelledby="tituloDetalhe">
+        <h2 id="tituloDetalhe"></h2>
+        <p id="empresaDetalhe"></p>
+        <p id="localDetalhe"></p>
+        <p id="salarioDetalhe"></p>
+        <h3>Habilidades e descrição</h3>
+        <p id="descricaoDetalhe"></p>
+        <p id="contatoDetalhe"></p>
+        <form method="dialog"><button class="btn btn-primary">Fechar</button></form>
+    </dialog>
 
     <!-- FOOTER -->
     <footer class="pt-5 pb-3 border-top">
@@ -361,18 +368,17 @@
                 <div class="col-md-3 mb-4">
                     <h5 class="fw-bold mb-3">Emprega-se aqui</h5>
                     <p class="text-muted small">
-                        Conectamos talentos em início de carreira às melhores
-                        oportunidades do mercado, com análise inteligente de
-                        compatibilidade de perfil.
+                        Conectamos talentos em início de carreira a oportunidades do mercado.
+              Consulte vagas, conheça áreas e prepare seu currículo.
                     </p>
                 </div>
 
                 <div class="col-md-2 mb-4">
                     <h5 class="fw-bold mb-3">Empresa</h5>
                     <ul class="list-unstyled small">
-                        <li class="mb-2"><a href="#" class="text-decoration-none text-secondary">Sobre nós</a></li>
-                        <li class="mb-2"><a href="#" class="text-decoration-none text-secondary">Para empresas</a></li>
-                        <li class="mb-2"><a href="#" class="text-decoration-none text-secondary">Criar currículo</a></li>
+                        <li class="mb-2"><a href="index.html#sobre-nos" class="text-decoration-none text-secondary">Sobre nós</a></li>
+                        <li class="mb-2"><a href="empresa.html" class="text-decoration-none text-secondary">Para empresas</a></li>
+                        <li class="mb-2"><a href="curriculo.html" class="text-decoration-none text-secondary">Criar currículo</a></li>
                     </ul>
                 </div>
 
@@ -394,9 +400,9 @@
                 <div class="col-md-3 mb-4">
                     <h5 class="fw-bold mb-3">Redes Sociais</h5>
                     <ul class="list-unstyled small">
-                        <li class="mb-2"><a href="#" class="text-decoration-none text-secondary">Instagram - Emprega-se Aqui</a></li>
-                        <li class="mb-2"><a href="#" class="text-decoration-none text-secondary">X - Emprega-se Aqui</a></li>
-                        <li class="mb-2"><a href="#" class="text-decoration-none text-secondary">TikTok - Emprega-se Aqui</a></li>
+                        <li class="mb-2"><span class="text-secondary">Instagram - Emprega-se Aqui (em breve)</span></li>
+                        <li class="mb-2"><span class="text-secondary">X - Emprega-se Aqui (em breve)</span></li>
+                        <li class="mb-2"><span class="text-secondary">TikTok - Emprega-se Aqui (em breve)</span></li>
                     </ul>
                 </div>
             </div>
@@ -422,57 +428,11 @@
         </div>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJvWVcXK/BmnVDxM+D2scQbITxI"
-        crossorigin="anonymous"></script>
+    
 
-    <script>
-        // Busca simples
-        const buscaInput = document.getElementById('buscaInput');
-        const listaVagas = document.getElementById('listaVagas');
+    
 
-        function filtrarVagas() {
-            const termo = buscaInput.value.toLowerCase();
-            const cards = listaVagas.querySelectorAll('.vaga-card');
-            let visiveis = 0;
-            cards.forEach(card => {
-                const texto = card.textContent.toLowerCase();
-                const visivel = texto.includes(termo);
-                card.style.display = visivel ? '' : 'none';
-                if (visivel) visiveis++;
-            });
-            document.getElementById('contagem').innerHTML = `<b>${visiveis}</b> ${visiveis === 1 ? 'vaga encontrada' : 'vagas encontradas'}`;
-        }
-
-        document.getElementById('buscaBtn').addEventListener('click', filtrarVagas);
-        buscaInput.addEventListener('keydown', e => { if (e.key === 'Enter') filtrarVagas(); });
-
-        // Tags rápidas
-        document.querySelectorAll('.tag-rapida').forEach(btn => {
-            btn.addEventListener('click', () => {
-                buscaInput.value = btn.dataset.filtro;
-                filtrarVagas();
-            });
-        });
-
-        // Filtro por chips de área
-        document.querySelectorAll('.filtro-chip').forEach(chip => {
-            chip.addEventListener('click', () => {
-                chip.classList.toggle('ativo');
-                buscaInput.value = chip.dataset.valor;
-                filtrarVagas();
-            });
-        });
-
-        // Limpar filtros
-        document.getElementById('limparFiltros').addEventListener('click', () => {
-            buscaInput.value = '';
-            document.querySelectorAll('.filtro-chip').forEach(c => c.classList.remove('ativo'));
-            document.querySelectorAll('.filtro-checks input').forEach(c => c.checked = false);
-            document.getElementById('filtrocidade').value = '';
-            filtrarVagas();
-        });
-    </script>
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
