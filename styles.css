@@ -309,6 +309,18 @@ body > hr {
     border-radius: 8px;
 }
 
+#avisoComentario {
+    padding: 12px;
+    border-radius: 6px;
+    background-color: #0d3447;
+    font-weight: 600;
+}
+
+#avisoComentario.sucesso {
+    color: #43d6b0;
+    border: 1px solid #43d6b0;
+}
+
 .form-label {
     font-weight: 600;
 }

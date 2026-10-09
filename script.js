@@ -271,6 +271,8 @@ if (formComentario) {
         const nome = document.getElementById("commentName").value.trim();
         const comentario = document.getElementById("commentText").value.trim();
         const aviso = document.getElementById("avisoComentario");
+        aviso.hidden = false;
+        aviso.classList.remove("sucesso");
         if (!nome || !comentario) {
             aviso.textContent = "Preencha seu nome e comentário.";
             return;
@@ -285,7 +287,9 @@ if (formComentario) {
         card.appendChild(texto);
         document.getElementById("novosComentarios").appendChild(card);
         formComentario.reset();
-        aviso.textContent = "Comentário adicionado nesta página.";
+        aviso.textContent = "OBRIGADO PELO COMENTÁRIO!";
+        aviso.classList.add("sucesso");
+        aviso.focus();
     });
 }
 
